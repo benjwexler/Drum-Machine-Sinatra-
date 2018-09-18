@@ -1,0 +1,52 @@
+
+
+#header {
+    height: 200px;
+    background-color: purple;
+}
+
+.exper {
+    height: 15vh;
+    border: 2px solid gold;
+}
+
+.pads {
+    height: 100%;
+    width: 100%; 
+}
+
+// #hat1 {
+//     display: none;
+// }
+
+.backgroundBlack { 
+    background: black;
+}
+ 
+#keyAssign{
+    height: 100px;
+    width: 100px;
+    border: 2px solid yellow;
+    // background-color: yellow;
+} 
+
+#beatRepeat{
+    height: 100px;
+    width: 100px;
+    border: 2px solid yellow;
+    
+}   
+
+.hiddenButton {
+    // z-index: 9999999099999;
+    background-color: yellow;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    display: none;
+    right: 6%;
+}
+// *{
+//     cursor: url("/Users/bwexler/Downloads/metropic_bhO_icon.ico"), default;
+// }  

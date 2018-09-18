@@ -1,0 +1,41 @@
+#header {
+  height: 200px;
+  background-color: purple;
+}
+
+.exper {
+  height: 15vh;
+  border: 2px solid gold;
+}
+
+.pads {
+  height: 100%;
+  width: 100%;
+}
+
+.backgroundBlack {
+  background: black;
+}
+
+#keyAssign {
+  height: 100px;
+  width: 100px;
+  border: 2px solid yellow;
+}
+
+#beatRepeat {
+  height: 100px;
+  width: 100px;
+  border: 2px solid yellow;
+}
+
+.hiddenButton {
+  background-color: yellow;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: 0;
+  display: none;
+  right: 6%;
+}
+/*# sourceMappingURL=index.css.map */
