@@ -1,3 +1,5 @@
+let randomObj= {};
+
 let soundObject = {
 	pad1: { sound: "/drumSamplesFolder/MetroHat1.wav", key: 49 },
 	pad2: { sound: "/drumSamplesFolder/rimshot1.wav", key: 50 },
@@ -539,10 +541,10 @@ function playSoundWithBeatRepeat2(tempo, noteDivision, soundFile) {
 
 
 
-	function playSound1() {
-		bufferNode1 = context.createBufferSource();
+	function playSound1(nameBufferNode, soundFile) {
+		window[nameBufferNode] = context.createBufferSource();
 		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad1.sound, true);
+		request.open('GET', soundFile, true);
 
 		request.responseType = 'arraybuffer';
 
@@ -550,8 +552,8 @@ function playSoundWithBeatRepeat2(tempo, noteDivision, soundFile) {
 			context.decodeAudioData(
 				request.response,
 				function (buffer) {
-					bufferNode1.buffer = buffer;
-					bufferNode1.connect(gainNode);
+					window[nameBufferNode].buffer = buffer;
+					window[nameBufferNode].connect(gainNode);
 					gainNode.connect(context.destination);
 					gainNode.gain.setValueAtTime(1, context.currentTime);
 				},
@@ -559,357 +561,15 @@ function playSoundWithBeatRepeat2(tempo, noteDivision, soundFile) {
 			);
 		};
 		request.send()
-		bufferNode1.start()
-	};
-	function playSound2() {
-		bufferNode2 = context.createBufferSource();
-		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad2.sound, true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			context.decodeAudioData(
-				request.response,
-				function (buffer) {
-					bufferNode2.buffer = buffer;
-					bufferNode2.connect(gainNode);
-					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(1, context.currentTime);
-				},
-				function (e) { console.log("Error with decoding audio data" + e.err); }
-			);
-		};
-		request.send()
-		bufferNode2.start()
-	};
-	function playSound3() {
-		bufferNode3 = context.createBufferSource();
-		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad3.sound, true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			context.decodeAudioData(
-				request.response,
-				function (buffer) {
-					bufferNode3.buffer = buffer;
-					bufferNode3.connect(gainNode);
-					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(1, context.currentTime);
-				},
-				function (e) { console.log("Error with decoding audio data" + e.err); }
-			);
-		};
-		request.send()
-		bufferNode3.start()
-	};
-	function playSound4() {
-		bufferNode4 = context.createBufferSource();
-		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad4.sound, true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			context.decodeAudioData(
-				request.response,
-				function (buffer) {
-					bufferNode4.buffer = buffer;
-					bufferNode4.connect(gainNode);
-					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(1, context.currentTime);
-				},
-				function (e) { console.log("Error with decoding audio data" + e.err); }
-			);
-		};
-		request.send()
-		bufferNode4.start()
-	};
-	function playSound5() {
-		bufferNode5 = context.createBufferSource();
-		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad5.sound, true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			context.decodeAudioData(
-				request.response,
-				function (buffer) {
-					bufferNode5.buffer = buffer;
-					bufferNode5.connect(gainNode);
-					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(1, context.currentTime);
-				},
-				function (e) { console.log("Error with decoding audio data" + e.err); }
-			);
-		};
-		request.send()
-		bufferNode5.start()
-	};
-	function playSound6() {
-		bufferNode6 = context.createBufferSource();
-		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad6.sound, true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			context.decodeAudioData(
-				request.response,
-				function (buffer) {
-					bufferNode6.buffer = buffer;
-					bufferNode6.connect(gainNode);
-					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(1, context.currentTime);
-				},
-				function (e) { console.log("Error with decoding audio data" + e.err); }
-			);
-		};
-		request.send()
-		bufferNode6.start()
-	};
-	function playSound7() {
-		bufferNode7 = context.createBufferSource();
-		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad7.sound, true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			context.decodeAudioData(
-				request.response,
-				function (buffer) {
-					bufferNode7.buffer = buffer;
-					bufferNode7.connect(gainNode);
-					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(1, context.currentTime);
-				},
-				function (e) { console.log("Error with decoding audio data" + e.err); }
-			);
-		};
-		request.send()
-		bufferNode7.start()
-	};
-	function playSound8() {
-		bufferNode8 = context.createBufferSource();
-		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad8.sound, true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			context.decodeAudioData(
-				request.response,
-				function (buffer) {
-					bufferNode8.buffer = buffer;
-					bufferNode8.connect(gainNode);
-					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(1, context.currentTime);
-				},
-				function (e) { console.log("Error with decoding audio data" + e.err); }
-			);
-		};
-		request.send()
-		bufferNode8.start()
-	};
-	function playSound9() {
-		bufferNode9 = context.createBufferSource();
-		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad9.sound, true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			context.decodeAudioData(
-				request.response,
-				function (buffer) {
-					bufferNode9.buffer = buffer;
-					bufferNode9.connect(gainNode);
-					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(1, context.currentTime);
-				},
-				function (e) { console.log("Error with decoding audio data" + e.err); }
-			);
-		};
-		request.send()
-		bufferNode9.start()
-	};
-	function playSound10() {
-		bufferNode10 = context.createBufferSource();
-		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad10.sound, true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			context.decodeAudioData(
-				request.response,
-				function (buffer) {
-					bufferNode10.buffer = buffer;
-					bufferNode10.connect(gainNode);
-					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(1, context.currentTime);
-				},
-				function (e) { console.log("Error with decoding audio data" + e.err); }
-			);
-		};
-		request.send()
-		bufferNode10.start()
-	};
-	function playSound11() {
-		bufferNode11 = context.createBufferSource();
-		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad11.sound, true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			context.decodeAudioData(
-				request.response,
-				function (buffer) {
-					bufferNode11.buffer = buffer;
-					bufferNode11.connect(gainNode);
-					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(1, context.currentTime);
-				},
-				function (e) { console.log("Error with decoding audio data" + e.err); }
-			);
-		};
-		request.send()
-		bufferNode11.start()
-	};
-	function playSound12() {
-		bufferNode12 = context.createBufferSource();
-		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad12.sound, true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			context.decodeAudioData(
-				request.response,
-				function (buffer) {
-					bufferNode12.buffer = buffer;
-					bufferNode12.connect(gainNode);
-					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(1, context.currentTime);
-				},
-				function (e) { console.log("Error with decoding audio data" + e.err); }
-			);
-		};
-		request.send()
-		bufferNode12.start()
-	};
-	function playSound13() {
-		bufferNode13 = context.createBufferSource();
-		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad13.sound, true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			context.decodeAudioData(
-				request.response,
-				function (buffer) {
-					bufferNode13.buffer = buffer;
-					bufferNode13.connect(gainNode);
-					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(1, context.currentTime);
-				},
-				function (e) { console.log("Error with decoding audio data" + e.err); }
-			);
-		};
-		request.send()
-		bufferNode13.start()
-	};
-	function playSound14() {
-		bufferNode14 = context.createBufferSource();
-		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad14.sound, true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			context.decodeAudioData(
-				request.response,
-				function (buffer) {
-					bufferNode14.buffer = buffer;
-					bufferNode14.connect(gainNode);
-					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(1, context.currentTime);
-				},
-				function (e) { console.log("Error with decoding audio data" + e.err); }
-			);
-		};
-		request.send()
-		bufferNode14.start()
-	};
-	function playSound15() {
-		bufferNode15 = context.createBufferSource();
-		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad15.sound, true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			context.decodeAudioData(
-				request.response,
-				function (buffer) {
-					bufferNode15.buffer = buffer;
-					bufferNode15.connect(gainNode);
-					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(1, context.currentTime);
-				},
-				function (e) { console.log("Error with decoding audio data" + e.err); }
-			);
-		};
-		request.send()
-		bufferNode15.start()
-	};
-	function playSound16() {
-		bufferNode16 = context.createBufferSource();
-		var request = new XMLHttpRequest();
-		request.open('GET', soundObject.pad16.sound, true);
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			context.decodeAudioData(
-				request.response,
-				function (buffer) {
-					bufferNode16.buffer = buffer;
-					bufferNode16.connect(gainNode);
-					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(1, context.currentTime);
-				},
-				function (e) { console.log("Error with decoding audio data" + e.err); }
-			);
-		};
-		request.send()
-		bufferNode16.start()
+		window[nameBufferNode].start()
 	};
 
-	function stopSound1() {
-		bufferNode1.stop(context.currentTime);
+
+
+	function stopSound1(nameBufferNode) {
+		window[nameBufferNode].stop(context.currentTime);
 	};
-	function stopSound2() {
-		bufferNode2.stop(context.currentTime);
-	};
-	function stopSound3() {
-		bufferNode3.stop(context.currentTime);
-	};
-	function stopSound4() {
-		bufferNode4.stop(context.currentTime);
-	};
-	function stopSound5() {
-		bufferNode5.stop(context.currentTime);
-	};
-	function stopSound6() {
-		bufferNode6.stop(context.currentTime);
-	};
-	function stopSound7() {
-		bufferNode7.stop(context.currentTime);
-	};
-	function stopSound8() {
-		bufferNode8.stop(context.currentTime);
-	};
-	function stopSound9() {
-		bufferNode9.stop(context.currentTime);
-	};
-	function stopSound10() {
-		bufferNode10.stop(context.currentTime);
-	};
-	function stopSound11() {
-		bufferNode11.stop(context.currentTime);
-	};
-	function stopSound12() {
-		bufferNode12.stop(context.currentTime);
-	};
-	function stopSound13() {
-		bufferNode13.stop(context.currentTime);
-	};
-	function stopSound14() {
-		bufferNode14.stop(context.currentTime);
-	};
-	function stopSound15() {
-		bufferNode15.stop(context.currentTime);
-	};
-	function stopSound16() {
-		bufferNode16.stop(context.currentTime);
-	};
+
 
 	document.getElementById('pad1').addEventListener('click', function () { playAndStop1() }, true);
 	document.getElementById('pad2').addEventListener('click', function () { playAndStop2() }, true);
@@ -946,7 +606,7 @@ function playSoundWithBeatRepeat2(tempo, noteDivision, soundFile) {
 				if (noteRepeatSwitcher === "on") {
 				playSoundWithBeatRepeat(tempo, noteDivision)
 				} else {
-				playAndStop1()
+				playAndStop1('bufferNode1', soundObject.pad1.sound, pad1)
 				}
 				
 				repeatPad1++
@@ -955,64 +615,64 @@ function playSoundWithBeatRepeat2(tempo, noteDivision, soundFile) {
 				if (noteRepeatSwitcher === "on") {
 					playSoundWithBeatRepeat2(tempo, noteDivision, soundObject.pad2.sound)
 					} else {
-				playAndStop2()
+					playAndStop1('bufferNode2', soundObject.pad2.sound, pad2)
 					}
 				repeatPad2++
 			}
 			if (event.keyCode === soundObject.pad3.key && (repeatPad3 < 1) && switcher === "off") {
-				playAndStop3()
+				playAndStop1('bufferNode3', soundObject.pad3.sound, pad3)
 				repeatPad3++
 			}
 			if (event.keyCode === soundObject.pad4.key && (repeatPad4 < 1) && switcher === "off") {
-				playAndStop4()
+				playAndStop1('bufferNode4', soundObject.pad4.sound, pad4)
 				repeatPad4++
 			}
 			if (event.keyCode === soundObject.pad5.key && (repeatPad5 < 1) && switcher === "off") {
-				playAndStop5()
+				playAndStop1('bufferNode5', soundObject.pad5.sound, pad5)
 				repeatPad5++
 			}
 			if (event.keyCode === soundObject.pad6.key && (repeatPad6 < 1) && switcher === "off") {
-				playAndStop6()
+				playAndStop1('bufferNode6', soundObject.pad6.sound, pad6)
 				repeatPad6++
 			}
 			if (event.keyCode === soundObject.pad7.key && (repeatPad7 < 1) && switcher === "off") {
-				playAndStop7()
+				playAndStop1('bufferNode7', soundObject.pad7.sound, pad7)
 				repeatPad7++
 			}
 			if (event.keyCode === soundObject.pad8.key && (repeatPad8 < 1) && switcher === "off") {
-				playAndStop8()
+				playAndStop1('bufferNode8', soundObject.pad8.sound, pad8)
 				repeatPad8++
 			}
 			if (event.keyCode === soundObject.pad9.key && (repeatPad9 < 1) && switcher === "off") {
-				playAndStop9()
+				playAndStop1('bufferNode9', soundObject.pad9.sound, pad9)
 				repeatPad9++
 			}
 			if (event.keyCode === soundObject.pad10.key && (repeatPad10 < 1) && switcher === "off") {
-				playAndStop10()
+				playAndStop1('bufferNode10', soundObject.pad10.sound, pad10)
 				repeatPad10++
 			}
 			if (event.keyCode === soundObject.pad11.key && (repeatPad11 < 1) && switcher === "off") {
-				playAndStop11()
+				playAndStop1('bufferNode11', soundObject.pad11.sound, pad11)
 				repeatPad11++
 			}
 			if (event.keyCode === soundObject.pad12.key && (repeatPad12 < 1) && switcher === "off") {
-				playAndStop12()
+				playAndStop1('bufferNode12', soundObject.pad12.sound, pad12)
 				repeatPad12++
 			}
 			if (event.keyCode === soundObject.pad13.key && (repeatPad13 < 1) && switcher === "off") {
-				playAndStop13()
+				playAndStop1('bufferNode13', soundObject.pad13.sound, pad13)
 				repeatPad13++
 			}
 			if (event.keyCode === soundObject.pad14.key && (repeatPad14 < 1) && switcher === "off") {
-				playAndStop14()
+				playAndStop1('bufferNode14', soundObject.pad14.sound, pad14)
 				repeatPad14++
 			}
 			if (event.keyCode === soundObject.pad15.key && (repeatPad15 < 1) && switcher === "off") {
-				playAndStop15()
+				playAndStop1('bufferNode15', soundObject.pad15.sound, pad15)
 				repeatPad15++
 			}
 			if (event.keyCode === soundObject.pad16.key && (repeatPad16 < 1) && switcher === "off") {
-				playAndStop16()
+				playAndStop1('bufferNode16', soundObject.pad16.sound, pad16)
 				repeatPad16++
 			}
 
@@ -1110,251 +770,122 @@ function playSoundWithBeatRepeat2(tempo, noteDivision, soundFile) {
 		window.addEventListener("keydown", keyzDown);
 		});
 
-	function playAndStop1() {
+let counterObj = {
+	newPadCounter1: 0,
+	newPadCounter2: 0,
+	newPadCounter3: 0,
+	newPadCounter4: 0,
+	newPadCounter5: 0,
+	newPadCounter6: 0,
+	newPadCounter7: 0,
+	newPadCounter8: 0,
+	newPadCounter9: 0,
+	newPadCounter10: 0,
+	newPadCounter11: 0,
+	newPadCounter12: 0,
+	newPadCounter13: 0,
+	newPadCounter14: 0,
+	newPadCounter15: 0,
+	newPadCounter16: 0,
+};
+
+console.log(counterObj);
+		// for(var i=1; i<=16; i++) {
+		// 	window['newPadCounter'+i] = 0;
+		
+		// }
+
+		
+let counter;
+	function playAndStop1(bufferNodeName, soundFile, pad) {
 
 		if (switcher === "off") {
+			if (bufferNodeName === 'bufferNode1') {
+				counter = counterObj.newPadCounter1
+				counterObj.newPadCounter1 = counterObj.newPadCounter1 + 1
+			}
+			if (bufferNodeName === 'bufferNode2') {
+				counter = counterObj.newPadCounter2
+				counterObj.newPadCounter2 = counterObj.newPadCounter2 + 1
+			}
+			if (bufferNodeName === 'bufferNode3') {
+				counter = counterObj.newPadCounter3
+				counterObj.newPadCounter3 = counterObj.newPadCounter3 + 1
+			}
+			if (bufferNodeName === 'bufferNode4') {
+				counter = counterObj.newPadCounter4
+				counterObj.newPadCounter4 = counterObj.newPadCounter4 + 1
+			}
+			if (bufferNodeName === 'bufferNode5') {
+				counter = counterObj.newPadCounter5
+				counterObj.newPadCounter5 = counterObj.newPadCounter5 + 1
+			}
+			if (bufferNodeName === 'bufferNode6') {
+				counter = counterObj.newPadCounter6
+				counterObj.newPadCounter6 = counterObj.newPadCounter6 + 1
+			}
+			if (bufferNodeName === 'bufferNode7') {
+				counter = counterObj.newPadCounter7
+				counterObj.newPadCounter7 = counterObj.newPadCounter7 + 1
+			}
+			if (bufferNodeName === 'bufferNode8') {
+				counter = counterObj.newPadCounter8
+				counterObj.newPadCounter8 = counterObj.newPadCounter8 + 1
+			}
+			if (bufferNodeName === 'bufferNode9') {
+				counter = counterObj.newPadCounter9
+				counterObj.newPadCounter9 = counterObj.newPadCounter9 + 1
+			}
+			if (bufferNodeName === 'bufferNode10') {
+				counter = counterObj.newPadCounter10
+				counterObj.newPadCounter10 = counterObj.newPadCounter10 + 1
 
-			if (q === 0) {
-				playSound1();
+			}
+			if (bufferNodeName === 'bufferNode11') {
+				counter = counterObj.newPadCounter11
+				counterObj.newPadCounter11 = counterObj.newPadCounter11 + 1
+			}
+			if (bufferNodeName === 'bufferNode12') {
+				counter = counterObj.newPadCounter12
+				counterObj.newPadCounter12 = counterObj.newPadCounter12 + 1
 
-				addBackground(pad1);
-				setTimeout(removeBackground, 3, pad1);
-				q++
-			} else {
-				stopSound1();
-				playSound1();
-				addBackground(pad1);
-				setTimeout(removeBackground, 3, pad1);
+			}
+			if (bufferNodeName === 'bufferNode13') {
+				counter = counterObj.newPadCounter13
+				counterObj.newPadCounter13 = counterObj.newPadCounter13 + 1
+			}
+			if (bufferNodeName === 'bufferNode14') {
+				counter = counterObj.newPadCounter14
+				counterObj.newPadCounter14 = counterObj.newPadCounter14 + 1
+			}
+			if (bufferNodeName === 'bufferNode15') {
+				counter = counterObj.newPadCounter15
+				counterObj.newPadCounter15 = counterObj.newPadCounter15 + 1
+
+			}
+			if (bufferNodeName === 'bufferNode16') {
+				counter = counterObj.newPadCounter16
+				counterObj.newPadCounter16 = counterObj.newPadCounter16 + 1
+			}
+
+
+
+			if (counter === 0) {
+				playSound1(bufferNodeName, soundFile);
+				addBackground(pad);
+				setTimeout(removeBackground, 3, pad);
+				
+			} 
+			else {
+				stopSound1(bufferNodeName);
+				playSound1(bufferNodeName, soundFile);
+				addBackground(pad);
+				setTimeout(removeBackground, 3, pad);
 				
 			}
 		}
 	};
-	function playAndStop2() {
-		if (switcher === "off") {
-			if (w === 0) {
-				playSound2();
-				addBackground(pad2);
-				setTimeout(removeBackground, 3, pad2);
-				w++
 
-			} else {
-				stopSound2();
-				playSound2();
-				addBackground(pad2);
-				setTimeout(removeBackground, 3, pad2);
-			}
-		}
-	};
-	function playAndStop3() {
-		if (switcher === "off") {
-			if (e === 0) {
-				playSound3();
-				addBackground(pad3);
-				setTimeout(removeBackground, 3, pad3);
-				e++
-			} else {
-				stopSound3();
-				playSound3();
-				addBackground(pad3);
-				setTimeout(removeBackground, 3, pad3);
-			}
-		}
-	};
-	function playAndStop4() {
-		if (switcher === "off") {
-			if (r === 0) {
-				playSound4();
-				addBackground(pad4);
-				setTimeout(removeBackground, 3, pad4);
-				r++
-			} else {
-				stopSound4();
-				playSound4();
-				addBackground(pad4);
-				setTimeout(removeBackground, 3, pad4);
-			}
-		}
-	};
-	function playAndStop5() {
-		if (switcher === "off") {
-			if (t === 0) {
-				playSound5();
-				addBackground(pad5);
-				setTimeout(removeBackground, 3, pad5);
-				t++
-			} else {
-				stopSound5();
-				playSound5();
-				addBackground(pad5);
-				setTimeout(removeBackground, 3, pad5);
-			}
-		}
-	};
-	function playAndStop6() {
-		if (switcher === "off") {
-			if (y === 0) {
-				playSound6();
-				addBackground(pad6);
-				setTimeout(removeBackground, 3, pad6);
-				y++
-			} else {
-				stopSound6();
-				playSound6();
-				addBackground(pad6);
-				setTimeout(removeBackground, 3, pad6);
-			}
-		}
-	};
-	function playAndStop7() {
-		if (switcher === "off") {
-			if (u === 0) {
-				playSound7();
-				addBackground(pad7);
-				setTimeout(removeBackground, 3, pad7);
-				u++
-			} else {
-				stopSound7();
-				playSound7();
-				addBackground(pad7);
-				setTimeout(removeBackground, 3, pad7);
-			}
-		}
-	};
-	function playAndStop8() {
-		if (switcher === "off") {
-			if (j === 0) {
-				playSound8();
-				addBackground(pad8);
-				setTimeout(removeBackground, 3, pad8);
-				j++
-			} else {
-				stopSound8();
-				playSound8();
-				addBackground(pad8);
-				setTimeout(removeBackground, 3, pad8);
-			}
-		}
-	};
-	function playAndStop9() {
-		if (switcher === "off") {
-			if (o === 0) {
-				playSound9();
-				addBackground(pad9);
-				setTimeout(removeBackground, 3, pad9);
-				o++
-			} else {
-				stopSound9();
-				playSound9();
-				addBackground(pad9);
-				setTimeout(removeBackground, 3, pad9);
-			}
-		}
-	};
-	function playAndStop10() {
-		if (switcher === "off") {
-			if (p === 0) {
-				playSound10();
-				addBackground(pad10);
-				setTimeout(removeBackground, 3, pad10);
-				p++
-			} else {
-				stopSound10();
-				playSound10();
-				addBackground(pad10);
-				setTimeout(removeBackground, 3, pad10);
-			}
-		}
-	};
-	function playAndStop11() {
-		if (switcher === "off") {
-			if (a === 0) {
-				playSound11();
-				addBackground(pad11);
-				setTimeout(removeBackground, 3, pad11);
-				a++
-			} else {
-				stopSound11();
-				playSound11();
-				addBackground(pad11);
-				setTimeout(removeBackground, 3, pad11);
-			}
-		}
-	};
-	function playAndStop12() {
-		if (switcher === "off") {
-			if (s === 0) {
-				playSound12();
-				addBackground(pad12);
-				setTimeout(removeBackground, 3, pad12);
-				s++
-			} else {
-				stopSound12();
-				playSound12();
-				addBackground(pad12);
-				setTimeout(removeBackground, 3, pad12);
-			}
-		}
-	};
-	function playAndStop13() {
-		if (switcher === "off") {
-			if (m === 0) {
-				playSound13();
-				addBackground(pad13);
-				setTimeout(removeBackground, 3, pad13);
-				m++
-			} else {
-				stopSound13();
-				playSound13();
-				addBackground(pad13);
-				setTimeout(removeBackground, 3, pad13);
-			}
-		}
-	};
-	function playAndStop14() {
-		if (switcher === "off") {
-			if (f === 0) {
-				playSound14();
-				addBackground(pad14);
-				setTimeout(removeBackground, 3, pad14);
-				f++
-			} else {
-				stopSound14();
-				playSound14();
-				addBackground(pad14);
-				setTimeout(removeBackground, 3, pad14);
-			}
-		}
-	};
-	function playAndStop15() {
-		if (switcher === "off") {
-			if (g === 0) {
-				playSound15();
-				addBackground(pad15);
-				setTimeout(removeBackground, 3, pad15);
-				g++
-			} else {
-				stopSound15();
-				playSound15();
-				addBackground(pad15);
-				setTimeout(removeBackground, 3, pad15);
-			}
-		}
-	};
-	function playAndStop16() {
-		if (switcher === "off") {
-			if (h === 0) {
-				playSound16();
-				addBackground(pad16);
-				setTimeout(removeBackground, 3, pad16);
-				h++
-			} else {
-				stopSound16();
-				playSound16();
-				addBackground(pad16);
-				setTimeout(removeBackground, 3, pad16);
-			}
-		};
-	}
 });
 
 
