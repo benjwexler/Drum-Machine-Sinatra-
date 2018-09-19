@@ -36,8 +36,6 @@ let kit1 = {
 	pad16: { sound: "/drumSamplesFolder/kick2.wav", key: 86 }
 };
 
-
-
 let kit2 = {
 	pad1: { sound: "/drumSamplesFolder/triangle1.wav", key: 49 },
 	pad2: { sound: "/drumSamplesFolder/rimshot1.wav", key: 50 },
@@ -95,68 +93,44 @@ let snareJordanKit = {
 	pad16: { sound: "/snareJordanKit/clap_clean.wav", key: 86 }
 };
 
-
-
-
-
-
 let allKits = [kit1, kit2, snareJordanKit];
-
 
 let changeKitCounter = 1;
 
 function changeKits() {
-	if(changeKitCounter === 0) {
-	soundObject = allKits[changeKitCounter];
-	changeKitCounter++
-	console.log(changeKitCounter)
-	} else {
+	if (changeKitCounter === 0) {
+		soundObject = allKits[changeKitCounter];
+		changeKitCounter++
+		console.log(changeKitCounter)
+	}
+	else {
 		soundObject = allKits[changeKitCounter];
 		changeKitCounter++;
 		console.log(changeKitCounter)
 	}
-
-	if(changeKitCounter === allKits.length) {
+	if (changeKitCounter === allKits.length) {
 		changeKitCounter = 0;
 		console.log(changeKitCounter)
 	}
 }
 
-// function changeKits() {
-// 	if(changeKitCounter === 0) {
-// 	soundObject = allKits[changeKitCounter];
-// 	changeKitCounter++
-// 	console.log(changeKitCounter)
-// 	} else {
-// 		soundObject = allKits[changeKitCounter];
-// 		changeKitCounter++;
-// 		console.log(changeKitCounter)
-// 	}
-
-// 	if(changeKitCounter === allKits.length) {
-// 		changeKitCounter = 0;
-// 		console.log(changeKitCounter)
-// 	}
-// }
-
 function previousKits() {
-	if(changeKitCounter === 0) {
-	soundObject = allKits[changeKitCounter];
-	changeKitCounter = allKits.length-1
+	if (changeKitCounter === 0) {
+		soundObject = allKits[changeKitCounter];
+		changeKitCounter = allKits.length - 1
 
-	console.log(changeKitCounter)
+		console.log(changeKitCounter)
 	} else {
 		soundObject = allKits[changeKitCounter];
 		changeKitCounter--;
 		console.log(changeKitCounter)
 	}
 
-	if(changeKitCounter === allKits.length) {
+	if (changeKitCounter === allKits.length) {
 		changeKitCounter--
 		console.log(changeKitCounter)
 	}
 }
-
 
 previousKit = document.getElementById("previousKit");
 changeKit = document.getElementById("changeKit");
@@ -171,22 +145,12 @@ previousKit.addEventListener("click", function (event) {
 
 let mappedPad = "";
 let mappedKey = "";
-
-
-
-
-
-
 let keyAssign = document.getElementById("keyAssign");
 let beatRepeat = document.getElementById("beatRepeat");
-
 let switcher = "off";
 let noteRepeatSwitcher = "off";
-
-
 let hiddenButton = document.getElementsByClassName("hiddenButton");
 var pads = document.getElementsByClassName("pads");
-
 function displayKeyMappings() {
 	hiddenButton[0].innerText = String.fromCharCode(soundObject.pad1.key)
 	hiddenButton[1].innerText = String.fromCharCode(soundObject.pad2.key)
@@ -205,40 +169,20 @@ function displayKeyMappings() {
 	hiddenButton[14].innerText = String.fromCharCode(soundObject.pad15.key)
 	hiddenButton[15].innerText = String.fromCharCode(soundObject.pad16.key)
 }
-
 displayKeyMappings();
-
 function keyBind() {
-	if ((switcher === "on") ) {
+	if ((switcher === "on")) {
 		let mapKeyCounter = 0;
 		let mappedPad = this.id;
-		console.log(mappedPad);
-		console.log("before");
-
-
-		// if (noteRepeatSwitcher === "off") {
-
 		window.addEventListener("keydown", function (event) {
 			event.preventDefault;
 			if (mapKeyCounter < 1) {
 				mappedKey = event.keyCode;
-				
-				console.log(mappedPad);
-				console.log("after");
 				soundObject[mappedPad].key = mappedKey;
-
 				mapKeyCounter++;
-
 			}
 			displayKeyMappings()
-
-
 		})
-	// };
-
-		// mapKeyCounter = 0;
-
-
 	}
 };
 
@@ -259,7 +203,6 @@ function keyToggle() {
 		keyAssign.style.backgroundColor = "white";
 		keyAssign.innerText = "Key Assign Off";
 
-
 		for (let x = 0; x < hiddenButton.length; x++) {
 
 			hiddenButton[x].style.display = "none"
@@ -268,24 +211,15 @@ function keyToggle() {
 	} else {
 		keyAssign.style.backgroundColor = "yellow";
 		keyAssign.innerText = "Key Assign On";
-
 		for (let x = 0; x < hiddenButton.length; x++) {
 			hiddenButton[x].style.display = "inline"
-
-
 		}
 
 		for (var i = 0; i < pads.length; i++) {
 			pads[i].addEventListener("click", keyBind)
-
 		}
 		switcher = "on";
-
-
-
 	}
-
-
 }
 
 function addBackground(padNumber) {
@@ -300,78 +234,85 @@ function removeBackground(padNumber) {
 	}
 }
 
-let repeatPad1 = 0
+// let repeatPad1 = 0
 function repeatPad1EqualsZero() {
 	repeatPad1 = 0
 }
 
-let repeatPad2 = 0
+// let repeatPad2 = 0
 function repeatPad2EqualsZero() {
 	repeatPad2 = 0
 }
-let repeatPad3 = 0
+
+// let repeatPad3 = 0
 function repeatPad3EqualsZero() {
 	repeatPad3 = 0
 }
 
-let repeatPad4 = 0
+// let repeatPad4 = 0
 function repeatPad4EqualsZero() {
 	repeatPad4 = 0
 }
-let repeatPad5 = 0
+
+// let repeatPad5 = 0
 function repeatPad5EqualsZero() {
 	repeatPad5 = 0
 }
 
-let repeatPad6 = 0
+// let repeatPad6 = 0
 function repeatPad6EqualsZero() {
 	repeatPad6 = 0
 }
-let repeatPad7 = 0
+
+// let repeatPad7 = 0
 function repeatPad7EqualsZero() {
 	repeatPad7 = 0
 }
 
-let repeatPad8 = 0
+// let repeatPad8 = 0
 function repeatPad8EqualsZero() {
 	repeatPad8 = 0
 }
-let repeatPad9 = 0
+// let repeatPad9 = 0
 function repeatPad9EqualsZero() {
 	repeatPad9 = 0
 }
 
-let repeatPad10 = 0
+// let repeatPad10 = 0
 function repeatPad10EqualsZero() {
 	repeatPad10 = 0
 }
-let repeatPad11 = 0
+// let repeatPad11 = 0
 function repeatPad11EqualsZero() {
 	repeatPad11 = 0
 }
 
-let repeatPad12 = 0
+// let repeatPad12 = 0
 function repeatPad12EqualsZero() {
 	repeatPad12 = 0
 }
-let repeatPad13 = 0
+// let repeatPad13 = 0
 function repeatPad13EqualsZero() {
 	repeatPad13 = 0
 }
 
-let repeatPad14 = 0
+// let repeatPad14 = 0
 function repeatPad14EqualsZero() {
 	repeatPad14 = 0
 }
-let repeatPad15 = 0
+// let repeatPad15 = 0
 function repeatPad15EqualsZero() {
 	repeatPad15 = 0
 }
 
-let repeatPad16 = 0
+// let repeatPad16 = 0
 function repeatPad16EqualsZero() {
 	repeatPad16 = 0
 }
+
+for(var i=1; i<=16; i++) {
+		window['repeatPad'+i] = 0;
+	}
 
 let q = 0;
 let w = 0;
@@ -391,161 +332,103 @@ let g = 0;
 let h = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
-
 	var context = new window.AudioContext;
 	console.log(context);
-
-
 	var gainNode = context.createGain();
+	function beatRepeat(tempo, noteDivision) {
+		tempo2 = document.getElementById("set-tempo").value;
+		console.log(document.getElementById("set-tempo").value);
+		noteDivision2 = document.getElementById("set-noteDivision").value;
+		console.log(document.getElementById("set-noteDivision").value);
+		let interval = 1 / ((tempo2 / 60) * noteDivision2 / 4)
+		return interval
+	}
 
-	let tempo = 140;
-let noteDivision = 8;
+	let bufferCounter = 0;
 
-function beatRepeat (tempo, noteDivision) {
+	function playSound(interval) {
+		bufferNode = context.createBufferSource();
+		var request = new XMLHttpRequest();
 
-	// console.log(document.getElementById("set-tempo").value);
+		// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open
 
-	tempo2 = document.getElementById("set-tempo").value;
-	console.log(document.getElementById("set-tempo").value);
-	noteDivision2 = document.getElementById("set-noteDivision").value;
-	console.log(document.getElementById("set-noteDivision").value);
-	let interval = 1/((tempo2/60) * noteDivision2/4) 
+		request.open('GET', soundObject.pad1.sound, true);
 
-    return interval 
- 
-}
+		request.responseType = 'arraybuffer';
 
-let bufferCounter = 0;
+		request.onload = function () {
+			context.decodeAudioData(
+				// Request.response is the arrayBuffer (the audio that needs to be decoded)
+				request.response,
+				// This function will only only run when the audio has been decoded
+				function (buffer) {
+					bufferNode.buffer = buffer;
+					bufferNode.connect(gainNode);
+					gainNode.connect(context.destination);
+					bufferNode.loop = true;
+					console.log(interval);
+					bufferNode.loopEnd = interval;
+					gainNode.gain.setValueAtTime(1, context.currentTime);
+					console.log("start")
+					bufferNode.start(context.currentTime);
+					console.log(buffer.duration);
+				},
+				function (e) { console.log("Error with decoding audio data" + e.err); }
+			);
+		};
+		request.send()
 
-function playSound(interval) {
-	bufferNode = context.createBufferSource();
-	var request = new XMLHttpRequest();
-
-	// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open
-
-	request.open('GET', soundObject.pad1.sound, true);
-
-	request.responseType = 'arraybuffer';
-	
-	request.onload = function () {
-		context.decodeAudioData(
-			// Request.response is the arrayBuffer (the audio that needs to be decoded)
-			request.response,
-			// This function will only only run when the audio has been decoded
-			function (buffer) {
-				bufferNode.buffer = buffer;
-				bufferNode.connect(gainNode);
-				gainNode.connect(context.destination);
-				bufferNode.loop = true;
-				console.log(interval);
-				bufferNode.loopEnd = interval;
-				gainNode.gain.setValueAtTime(1, context.currentTime);
-				console.log("start")
-				bufferNode.start(context.currentTime);
-				console.log(buffer.duration);
-			},
-			function (e) { console.log("Error with decoding audio data" + e.err); }
-		);
 	};
-	request.send()
-	
-};
 
-function playSoundBR2(interval, soundFile) {
-	bufferNodeBR2 = context.createBufferSource();
-	var request = new XMLHttpRequest();
+	function playSoundBR2(interval, soundFile) {
+		bufferNodeBR2 = context.createBufferSource();
+		var request = new XMLHttpRequest();
 
-	// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open
+		// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open
 
-	request.open('GET', soundFile, true);
+		request.open('GET', soundFile, true);
 
-	request.responseType = 'arraybuffer';
-	
-	request.onload = function () {
-		context.decodeAudioData(
-			// Request.response is the arrayBuffer (the audio that needs to be decoded)
-			request.response,
-			// This function will only only run when the audio has been decoded
-			function (buffer) {
-				bufferNodeBR2.buffer = buffer;
-				bufferNodeBR2.connect(gainNode);
-				gainNode.connect(context.destination);
-				bufferNodeBR2.loop = true;
-				console.log(interval);
-				bufferNodeBR2.loopEnd = interval;
-				gainNode.gain.setValueAtTime(1, context.currentTime);
-				console.log("start")
-				bufferNodeBR2.start(context.currentTime);
-				console.log(buffer.duration);
-			},
-			function (e) { console.log("Error with decoding audio data" + e.err); }
-		);
+		request.responseType = 'arraybuffer';
+
+		request.onload = function () {
+			context.decodeAudioData(
+				// Request.response is the arrayBuffer (the audio that needs to be decoded)
+				request.response,
+				// This function will only only run when the audio has been decoded
+				function (buffer) {
+					bufferNodeBR2.buffer = buffer;
+					bufferNodeBR2.connect(gainNode);
+					gainNode.connect(context.destination);
+					bufferNodeBR2.loop = true;
+					console.log(interval);
+					bufferNodeBR2.loopEnd = interval;
+					gainNode.gain.setValueAtTime(1, context.currentTime);
+					console.log("start")
+					bufferNodeBR2.start(context.currentTime);
+					console.log(buffer.duration);
+				},
+				function (e) { console.log("Error with decoding audio data" + e.err); }
+			);
+		};
+		request.send()
+
 	};
-	request.send()
-	
-};
 
+	function playSoundWithBeatRepeat(tempo, noteDivision) {
+		let interval = beatRepeat(tempo, noteDivision);
+		playSound(interval);
+	}
 
-function startAndStop() {
-	bufferNode.start(context.currentTime);
-
-}
-
-function playSoundBeatRepeat(interval) {
-	bufferNodeBeatRepeat = context.createBufferSource();
-	var request = new XMLHttpRequest();
-	request.open('GET', soundObject.pad1.sound, true);
-
-	request.responseType = 'arraybuffer';
-
-	request.onload = function () {
-		context.decodeAudioData(
-			request.response,
-			function (buffer) {
-				bufferNodeBeatRepeat.buffer = buffer;
-				bufferNodeBeatRepeat.connect(gainNode);
-				gainNode.connect(context.destination);
-				gainNode.gain.setValueAtTime(1, context.currentTime);
-			},
-			function (e) { console.log("Error with decoding audio data" + e.err); }
-		);
-	};
-	request.send()
-	bufferNodeBeatRepeat.start(context.currentTime)
-	
-};
-
-function stopSound(interval) {
-	
-	// bufferNode.stop(context.currentTime + interval);
-	
-	console.log("stopSound");
-	console.log(context.currentTime);
-};
-
-function stopSoundBeatRepeat() {
-	bufferNodeBeatRepeat.stop(context.currentTime);
-};
-
-function playSoundWithBeatRepeat(tempo, noteDivision) {
-	let interval = beatRepeat(tempo, noteDivision);
-	playSound(interval);
-}
-
-function playSoundWithBeatRepeat2(tempo, noteDivision, soundFile) {
-	let interval = beatRepeat(tempo, noteDivision);
-	playSoundBR2(interval, soundFile);
-}
-
-
+	function playSoundWithBeatRepeat2(tempo, noteDivision, soundFile) {
+		let interval = beatRepeat(tempo, noteDivision);
+		playSoundBR2(interval, soundFile);
+	}
 
 	function playSound1(nameBufferNode, soundFile) {
 		window[nameBufferNode] = context.createBufferSource();
 		var request = new XMLHttpRequest();
 		request.open('GET', soundFile, true);
-
 		request.responseType = 'arraybuffer';
-
 		request.onload = function () {
 			context.decodeAudioData(
 				request.response,
@@ -562,12 +445,9 @@ function playSoundWithBeatRepeat2(tempo, noteDivision, soundFile) {
 		window[nameBufferNode].start()
 	};
 
-
-
 	function stopSound1(nameBufferNode) {
 		window[nameBufferNode].stop(context.currentTime);
 	};
-
 
 	document.getElementById('pad1').addEventListener('click', function () { playAndStop1() }, true);
 	document.getElementById('pad2').addEventListener('click', function () { playAndStop2() }, true);
@@ -588,33 +468,27 @@ function playSoundWithBeatRepeat2(tempo, noteDivision, soundFile) {
 
 	let setTempo = document.getElementById("set-tempo");
 
+	function keyzDown(event) {
 
-
-
-
-
-	function keyzDown (event) {
-		
 		event.preventDefault();
 
-		
 		if (event.keyCode != 8) {
 			if ((event.keyCode === soundObject.pad1.key) && (repeatPad1 < 1) && switcher === "off") {
 
 				if (noteRepeatSwitcher === "on") {
-				playSoundWithBeatRepeat(tempo, noteDivision)
+					playSoundWithBeatRepeat(tempo, noteDivision)
 				} else {
-				playAndStop1('bufferNode1', soundObject.pad1.sound, pad1)
+					playAndStop1('bufferNode1', soundObject.pad1.sound, pad1)
 				}
-				
+
 				repeatPad1++
 			}
 			if (event.keyCode === soundObject.pad2.key && (repeatPad2 < 1) && switcher === "off") {
 				if (noteRepeatSwitcher === "on") {
 					playSoundWithBeatRepeat2(tempo, noteDivision, soundObject.pad2.sound)
-					} else {
+				} else {
 					playAndStop1('bufferNode2', soundObject.pad2.sound, pad2)
-					}
+				}
 				repeatPad2++
 			}
 			if (event.keyCode === soundObject.pad3.key && (repeatPad3 < 1) && switcher === "off") {
@@ -677,10 +551,7 @@ function playSoundWithBeatRepeat2(tempo, noteDivision, soundFile) {
 		}
 	}
 
-// let eventListenerBody = document.getElementById("eventListenerBody");
-
 	window.addEventListener("keydown", keyzDown);
-
 
 	window.addEventListener("keyup", function (event) {
 		event.preventDefault();
@@ -688,14 +559,14 @@ function playSoundWithBeatRepeat2(tempo, noteDivision, soundFile) {
 			repeatPad1EqualsZero();
 
 			if (noteRepeatSwitcher === "on") {
-			bufferNode.stop(context.currentTime);
+				bufferNode.stop(context.currentTime);
 			}
 		}
 
 		if (event.keyCode === soundObject.pad2.key && (switcher === "off")) {
 			if (noteRepeatSwitcher === "on") {
 				bufferNodeBR2.stop(context.currentTime);
-				}
+			}
 			repeatPad2EqualsZero();
 		}
 		if (event.keyCode === soundObject.pad3.key && (switcher === "off")) {
@@ -754,47 +625,37 @@ function playSoundWithBeatRepeat2(tempo, noteDivision, soundFile) {
 
 	})
 
-
-		
-
-	
 	setTempo.addEventListener("focus", function (event) {
-	console.log("Moused! Over!");
-	window.removeEventListener("keydown", keyzDown);
-
+		window.removeEventListener("keydown", keyzDown);
 	});
 	setTempo.addEventListener("blur", function (event) {
-		console.log("Moused! Out!");
 		window.addEventListener("keydown", keyzDown);
-		});
+	});
 
-let counterObj = {
-	newPadCounter1: 0,
-	newPadCounter2: 0,
-	newPadCounter3: 0,
-	newPadCounter4: 0,
-	newPadCounter5: 0,
-	newPadCounter6: 0,
-	newPadCounter7: 0,
-	newPadCounter8: 0,
-	newPadCounter9: 0,
-	newPadCounter10: 0,
-	newPadCounter11: 0,
-	newPadCounter12: 0,
-	newPadCounter13: 0,
-	newPadCounter14: 0,
-	newPadCounter15: 0,
-	newPadCounter16: 0,
-};
+	let counterObj = {
+		newPadCounter1: 0,
+		newPadCounter2: 0,
+		newPadCounter3: 0,
+		newPadCounter4: 0,
+		newPadCounter5: 0,
+		newPadCounter6: 0,
+		newPadCounter7: 0,
+		newPadCounter8: 0,
+		newPadCounter9: 0,
+		newPadCounter10: 0,
+		newPadCounter11: 0,
+		newPadCounter12: 0,
+		newPadCounter13: 0,
+		newPadCounter14: 0,
+		newPadCounter15: 0,
+		newPadCounter16: 0,
+	};
 
-console.log(counterObj);
-		// for(var i=1; i<=16; i++) {
-		// 	window['newPadCounter'+i] = 0;
-		
-		// }
+	// for(var i=1; i<=16; i++) {
+	// 	window['newPadCounter'+i] = 0;
+	// }
+	let counter;
 
-		
-let counter;
 	function playAndStop1(bufferNodeName, soundFile, pad) {
 
 		if (switcher === "off") {
@@ -872,21 +733,19 @@ let counter;
 				playSound1(bufferNodeName, soundFile);
 				addBackground(pad);
 				setTimeout(removeBackground, 3, pad);
-				
-			} 
+
+			}
 			else {
 				stopSound1(bufferNodeName);
 				playSound1(bufferNodeName, soundFile);
 				addBackground(pad);
 				setTimeout(removeBackground, 3, pad);
-				
+
 			}
 		}
 	};
 
 });
-
-
 
 var midi, data;
 if (navigator.requestMIDIAccess) {
@@ -912,16 +771,6 @@ function onMIDIFailure() {
 var context = new window.AudioContext;
 console.log(context);
 function onMIDImessage(messageData) {
-	//   var newItem = document.createElement('li');
-	//   newItem.appendChild(document.createTextNode(messageData.data));
-	//   newItem.className = 'user-midi';
-	//   document.getElementById('midi-data').prepend(newItem);
-
-
-
-
-
-
 
 	var gainNode = context.createGain();
 
@@ -940,7 +789,7 @@ function onMIDImessage(messageData) {
 					bufferNode1.connect(gainNode);
 					gainNode.connect(context.destination);
 					// gainNode1.gain.setValueAtTime(1, context.currentTime);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
@@ -960,7 +809,7 @@ function onMIDImessage(messageData) {
 					bufferNode2.buffer = buffer;
 					bufferNode2.connect(gainNode);
 					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
@@ -980,7 +829,7 @@ function onMIDImessage(messageData) {
 					bufferNode3.buffer = buffer;
 					bufferNode3.connect(gainNode);
 					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
@@ -1000,7 +849,7 @@ function onMIDImessage(messageData) {
 					bufferNode4.buffer = buffer;
 					bufferNode4.connect(gainNode);
 					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
@@ -1020,7 +869,7 @@ function onMIDImessage(messageData) {
 					bufferNode5.buffer = buffer;
 					bufferNode5.connect(gainNode);
 					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
@@ -1040,7 +889,7 @@ function onMIDImessage(messageData) {
 					bufferNode6.buffer = buffer;
 					bufferNode6.connect(gainNode);
 					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
@@ -1060,7 +909,7 @@ function onMIDImessage(messageData) {
 					bufferNode7.buffer = buffer;
 					bufferNode7.connect(gainNode);
 					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
@@ -1080,7 +929,7 @@ function onMIDImessage(messageData) {
 					bufferNode8.buffer = buffer;
 					bufferNode8.connect(gainNode);
 					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
@@ -1100,7 +949,7 @@ function onMIDImessage(messageData) {
 					bufferNode9.buffer = buffer;
 					bufferNode9.connect(gainNode);
 					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
@@ -1120,7 +969,7 @@ function onMIDImessage(messageData) {
 					bufferNode10.buffer = buffer;
 					bufferNode10.connect(gainNode);
 					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
@@ -1140,7 +989,7 @@ function onMIDImessage(messageData) {
 					bufferNode11.buffer = buffer;
 					bufferNode11.connect(gainNode);
 					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
@@ -1160,7 +1009,7 @@ function onMIDImessage(messageData) {
 					bufferNode12.buffer = buffer;
 					bufferNode12.connect(gainNode);
 					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
@@ -1180,7 +1029,7 @@ function onMIDImessage(messageData) {
 					bufferNode13.buffer = buffer;
 					bufferNode13.connect(gainNode);
 					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
@@ -1200,7 +1049,7 @@ function onMIDImessage(messageData) {
 					bufferNode14.buffer = buffer;
 					bufferNode14.connect(gainNode);
 					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
@@ -1220,7 +1069,7 @@ function onMIDImessage(messageData) {
 					bufferNode15.buffer = buffer;
 					bufferNode15.connect(gainNode);
 					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
@@ -1240,7 +1089,7 @@ function onMIDImessage(messageData) {
 					bufferNode16.buffer = buffer;
 					bufferNode16.connect(gainNode);
 					gainNode.connect(context.destination);
-					gainNode.gain.setValueAtTime(note.velocity/127, context.currentTime);
+					gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
 				},
 				function (e) { console.log("Error with decoding audio data" + e.err); }
 			);
