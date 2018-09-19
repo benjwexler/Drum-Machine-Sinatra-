@@ -1,5 +1,3 @@
-let randomObj= {};
-
 let soundObject = {
 	pad1: { sound: "/drumSamplesFolder/MetroHat1.wav", key: 49 },
 	pad2: { sound: "/drumSamplesFolder/rimshot1.wav", key: 50 },
