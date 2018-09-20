@@ -332,6 +332,8 @@ let g = 0;
 let h = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
+	let tempo = 140;
+	let noteDivision = 8;
 	var context = new window.AudioContext;
 	console.log(context);
 	var gainNode = context.createGain();
@@ -447,24 +449,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	function stopSound1(nameBufferNode) {
 		window[nameBufferNode].stop(context.currentTime);
-	};
+	}; 
 
-	document.getElementById('pad1').addEventListener('click', function () { playAndStop1() }, true);
-	document.getElementById('pad2').addEventListener('click', function () { playAndStop2() }, true);
-	document.getElementById('pad3').addEventListener('click', function () { playAndStop3() }, true);
-	document.getElementById('pad4').addEventListener('click', function () { playAndStop4() }, true);
-	document.getElementById('pad5').addEventListener('click', function () { playAndStop5() }, true);
-	document.getElementById('pad6').addEventListener('click', function () { playAndStop6() }, true);
-	document.getElementById('pad7').addEventListener('click', function () { playAndStop7() }, true);
-	document.getElementById('pad8').addEventListener('click', function () { playAndStop8() }, true);
-	document.getElementById('pad9').addEventListener('click', function () { playAndStop9() }, true);
-	document.getElementById('pad10').addEventListener('click', function () { playAndStop10() }, true);
-	document.getElementById('pad11').addEventListener('click', function () { playAndStop11() }, true);
-	document.getElementById('pad12').addEventListener('click', function () { playAndStop12() }, true);
-	document.getElementById('pad13').addEventListener('click', function () { playAndStop13() }, true);
-	document.getElementById('pad14').addEventListener('click', function () { playAndStop14() }, true);
-	document.getElementById('pad15').addEventListener('click', function () { playAndStop15() }, true);
-	document.getElementById('pad16').addEventListener('click', function () { playAndStop16() }, true);
+	document.getElementById('pad1').addEventListener('click', function () { playAndStop1('bufferNode1', soundObject.pad1.sound, pad1) }, true);
+	document.getElementById('pad2').addEventListener('click', function () { playAndStop1('bufferNode2', soundObject.pad2.sound, pad2) }, true);
+	document.getElementById('pad3').addEventListener('click', function () { playAndStop1('bufferNode3', soundObject.pad3.sound, pad3) }, true);
+	document.getElementById('pad4').addEventListener('click', function () { playAndStop1('bufferNode4', soundObject.pad4.sound, pad4) }, true);
+	document.getElementById('pad5').addEventListener('click', function () { playAndStop1('bufferNode5', soundObject.pad5.sound, pad5) }, true);
+	document.getElementById('pad6').addEventListener('click', function () { playAndStop1('bufferNode6', soundObject.pad6.sound, pad6) }, true);
+	document.getElementById('pad7').addEventListener('click', function () { playAndStop1('bufferNode7', soundObject.pad7.sound, pad7) }, true);
+	document.getElementById('pad8').addEventListener('click', function () { playAndStop1('bufferNode8', soundObject.pad8.sound, pad8) }, true);
+	document.getElementById('pad9').addEventListener('click', function () { playAndStop1('bufferNode9', soundObject.pad9.sound, pad9) }, true);
+	document.getElementById('pad10').addEventListener('click', function () { playAndStop1('bufferNode10', soundObject.pad10.sound, pad10) }, true);
+	document.getElementById('pad11').addEventListener('click', function () { playAndStop1('bufferNode11', soundObject.pad11.sound, pad11) }, true);
+	document.getElementById('pad12').addEventListener('click', function () { playAndStop1('bufferNode12', soundObject.pad12.sound, pad12) }, true);
+	document.getElementById('pad13').addEventListener('click', function () { playAndStop1('bufferNode13', soundObject.pad13.sound, pad13) }, true);
+	document.getElementById('pad14').addEventListener('click', function () { playAndStop1('bufferNode14', soundObject.pad14.sound, pad14) }, true);
+	document.getElementById('pad15').addEventListener('click', function () { playAndStop1('bufferNode15', soundObject.pad15.sound, pad15) }, true);
+	document.getElementById('pad16').addEventListener('click', function () { playAndStop1('bufferNode16', soundObject.pad16.sound, pad16) }, true);
 
 	let setTempo = document.getElementById("set-tempo");
 
