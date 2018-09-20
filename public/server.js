@@ -443,6 +443,7 @@ document.addEventListener("DOMContentLoaded", function () {
 					if (noteRepeatSwitcher==="on") {
 						window[nameBufferNode].loop = true;
 						console.log(interval);
+						console.log(buffer.duration);
 						window[nameBufferNode].loopEnd = interval;
 					}
 					
