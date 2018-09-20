@@ -428,7 +428,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		playSoundBR2(interval, soundFile);
 	}
 
-	function playSound1(nameBufferNode, soundFile) {
+	function playSound1(nameBufferNode, soundFile, interval) {
 		window[nameBufferNode] = context.createBufferSource();
 		var request = new XMLHttpRequest();
 		request.open('GET', soundFile, true);
@@ -439,6 +439,13 @@ document.addEventListener("DOMContentLoaded", function () {
 				function (buffer) {
 					window[nameBufferNode].buffer = buffer;
 					window[nameBufferNode].connect(gainNode);
+
+					if (noteRepeatSwitcher==="on") {
+						window[nameBufferNode].loop = true;
+						console.log(interval);
+						window[nameBufferNode].loopEnd = interval;
+					}
+					
 					gainNode.connect(context.destination);
 					gainNode.gain.setValueAtTime(1, context.currentTime);
 				},
@@ -574,52 +581,94 @@ document.addEventListener("DOMContentLoaded", function () {
 			repeatPad2EqualsZero();
 		}
 		if (event.keyCode === soundObject.pad3.key && (switcher === "off")) {
+			if (noteRepeatSwitcher === "on") {
+				bufferNode3.stop(context.currentTime);
+			}
 			repeatPad3EqualsZero();
 		}
 
 		if (event.keyCode === soundObject.pad4.key && (switcher === "off")) {
+			if (noteRepeatSwitcher === "on") {
+				bufferNode4.stop(context.currentTime);
+			}
 			repeatPad4EqualsZero();
 		}
 		if (event.keyCode === soundObject.pad5.key && (switcher === "off")) {
+			if (noteRepeatSwitcher === "on") {
+				bufferNode5.stop(context.currentTime);
+			}
 			repeatPad5EqualsZero();
 		}
 
 		if (event.keyCode === soundObject.pad6.key && (switcher === "off")) {
+			if (noteRepeatSwitcher === "on") {
+				bufferNode6.stop(context.currentTime);
+			}
 			repeatPad6EqualsZero();
 		}
 		if (event.keyCode === soundObject.pad7.key && (switcher === "off")) {
+			if (noteRepeatSwitcher === "on") {
+				bufferNode7.stop(context.currentTime);
+			}
 			repeatPad7EqualsZero();
 		}
 
 		if (event.keyCode === soundObject.pad8.key && (switcher === "off")) {
+			if (noteRepeatSwitcher === "on") {
+				bufferNode8.stop(context.currentTime);
+			}
 			repeatPad8EqualsZero();
 		}
 		if (event.keyCode === soundObject.pad9.key && (switcher === "off")) {
+			if (noteRepeatSwitcher === "on") {
+				bufferNode9.stop(context.currentTime);
+			}
 			repeatPad9EqualsZero();
 		}
 
 		if (event.keyCode === soundObject.pad10.key && (switcher === "off")) {
+			if (noteRepeatSwitcher === "on") {
+				bufferNode10.stop(context.currentTime);
+			}
 			repeatPad10EqualsZero();
 		}
 		if (event.keyCode === soundObject.pad11.key && (switcher === "off")) {
+			if (noteRepeatSwitcher === "on") {
+				bufferNode11.stop(context.currentTime);
+			}
 			repeatPad11EqualsZero();
 		}
 
 		if (event.keyCode === soundObject.pad12.key && (switcher === "off")) {
+			if (noteRepeatSwitcher === "on") {
+				bufferNode12.stop(context.currentTime);
+			}
 			repeatPad12EqualsZero();
 		}
 		if (event.keyCode === soundObject.pad13.key && (switcher === "off")) {
+			if (noteRepeatSwitcher === "on") {
+				bufferNode13.stop(context.currentTime);
+			}
 			repeatPad13EqualsZero();
 		}
 
 		if (event.keyCode === soundObject.pad14.key && (switcher === "off")) {
+			if (noteRepeatSwitcher === "on") {
+				bufferNode14.stop(context.currentTime);
+			}
 			repeatPad14EqualsZero();
 		}
 		if (event.keyCode === soundObject.pad15.key && (switcher === "off")) {
+			if (noteRepeatSwitcher === "on") {
+				bufferNode15.stop(context.currentTime);
+			}
 			repeatPad15EqualsZero();
 		}
 
 		if (event.keyCode === soundObject.pad16.key && (switcher === "off")) {
+			if (noteRepeatSwitcher === "on") {
+				bufferNode16.stop(context.currentTime);
+			}
 			repeatPad16EqualsZero();
 		}
 
@@ -636,7 +685,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		window.addEventListener("keydown", keyzDown);
 	});
 
-	let counterObj = {
+	let counterObj = {	
 		newPadCounter1: 0,
 		newPadCounter2: 0,
 		newPadCounter3: 0,
@@ -661,6 +710,12 @@ document.addEventListener("DOMContentLoaded", function () {
 	let counter;
 
 	function playAndStop1(bufferNodeName, soundFile, pad) {
+
+
+
+			let interval = beatRepeat(tempo, noteDivision);
+
+	
 
 		if (switcher === "off") {
 			if (bufferNodeName === 'bufferNode1') {
@@ -733,15 +788,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-			if (counter === 0) {
-				playSound1(bufferNodeName, soundFile);
+			if (counter === 0 || noteRepeatSwitcher === "on") {
+				playSound1(bufferNodeName, soundFile, interval);
 				addBackground(pad);
 				setTimeout(removeBackground, 3, pad);
 
 			}
 			else {
 				stopSound1(bufferNodeName);
-				playSound1(bufferNodeName, soundFile);
+				playSound1(bufferNodeName, soundFile, interval);
 				addBackground(pad);
 				setTimeout(removeBackground, 3, pad);
 
