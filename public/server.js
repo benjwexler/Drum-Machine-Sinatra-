@@ -331,9 +331,12 @@ let f = 0;
 let g = 0;
 let h = 0;
 
+let tempo = 140;
+let noteDivision = 8;
+
 document.addEventListener("DOMContentLoaded", function () {
-	let tempo = 140;
-	let noteDivision = 8;
+	// let tempo = 140;
+	// let noteDivision = 8;
 	var context = new window.AudioContext;
 	console.log(context);
 	var gainNode = context.createGain();
@@ -832,6 +835,18 @@ var context = new window.AudioContext;
 console.log(context);
 function onMIDImessage(messageData) {
 
+	// let tempo = 140;
+	// let noteDivision = 8;
+
+	function beatRepeat(tempo, noteDivision) {
+		tempo2 = document.getElementById("set-tempo").value;
+		console.log(document.getElementById("set-tempo").value);
+		noteDivision2 = document.getElementById("set-noteDivision").value;
+		console.log(document.getElementById("set-noteDivision").value);
+		let interval = 1 / ((tempo2 / 60) * noteDivision2 / 4)
+		return interval
+	}
+
 	var gainNode = context.createGain();
 
 	function playSound1() {
@@ -857,6 +872,35 @@ function onMIDImessage(messageData) {
 		request.send()
 		bufferNode1.start()
 	};
+
+	// function playSound1(nameBufferNode, soundFile, interval) {
+	// 	window[nameBufferNode] = context.createBufferSource();
+	// 	var request = new XMLHttpRequest();
+	// 	request.open('GET', soundFile, true);
+	// 	request.responseType = 'arraybuffer';
+	// 	request.onload = function () {
+	// 		context.decodeAudioData(
+	// 			request.response,
+	// 			function (buffer) {
+	// 				window[nameBufferNode].buffer = buffer;
+	// 				window[nameBufferNode].connect(gainNode);
+
+	// 				if (noteRepeatSwitcher==="on") {
+	// 					window[nameBufferNode].loop = true;
+	// 					console.log(interval);
+	// 					console.log(buffer.duration);
+	// 					window[nameBufferNode].loopEnd = interval;
+	// 				}
+					
+	// 				gainNode.connect(context.destination);
+	// 				gainNode.gain.setValueAtTime(note.velocity / 127, context.currentTime);
+	// 			},
+	// 			function (e) { console.log("Error with decoding audio data" + e.err); }
+	// 		);
+	// 	};
+	// 	request.send()
+	// 	window[nameBufferNode].start()
+	// };
 	function playSound2() {
 		bufferNode2 = context.createBufferSource();
 		var request = new XMLHttpRequest();
@@ -1206,7 +1250,100 @@ function onMIDImessage(messageData) {
 	function stopSound16() {
 		bufferNode16.stop(context.currentTime);
 	};
+// 	function playAndStop1(bufferNodeName, soundFile, pad) {
 
+
+
+// 		let interval = beatRepeat(tempo, noteDivision);
+
+
+
+// 	if (switcher === "off") {
+// 		if (bufferNodeName === 'bufferNode1') {
+// 			counter = counterObj.newPadCounter1
+// 			counterObj.newPadCounter1 = counterObj.newPadCounter1 + 1
+// 		}
+// 		if (bufferNodeName === 'bufferNode2') {
+// 			counter = counterObj.newPadCounter2
+// 			counterObj.newPadCounter2 = counterObj.newPadCounter2 + 1
+// 		}
+// 		if (bufferNodeName === 'bufferNode3') {
+// 			counter = counterObj.newPadCounter3
+// 			counterObj.newPadCounter3 = counterObj.newPadCounter3 + 1
+// 		}
+// 		if (bufferNodeName === 'bufferNode4') {
+// 			counter = counterObj.newPadCounter4
+// 			counterObj.newPadCounter4 = counterObj.newPadCounter4 + 1
+// 		}
+// 		if (bufferNodeName === 'bufferNode5') {
+// 			counter = counterObj.newPadCounter5
+// 			counterObj.newPadCounter5 = counterObj.newPadCounter5 + 1
+// 		}
+// 		if (bufferNodeName === 'bufferNode6') {
+// 			counter = counterObj.newPadCounter6
+// 			counterObj.newPadCounter6 = counterObj.newPadCounter6 + 1
+// 		}
+// 		if (bufferNodeName === 'bufferNode7') {
+// 			counter = counterObj.newPadCounter7
+// 			counterObj.newPadCounter7 = counterObj.newPadCounter7 + 1
+// 		}
+// 		if (bufferNodeName === 'bufferNode8') {
+// 			counter = counterObj.newPadCounter8
+// 			counterObj.newPadCounter8 = counterObj.newPadCounter8 + 1
+// 		}
+// 		if (bufferNodeName === 'bufferNode9') {
+// 			counter = counterObj.newPadCounter9
+// 			counterObj.newPadCounter9 = counterObj.newPadCounter9 + 1
+// 		}
+// 		if (bufferNodeName === 'bufferNode10') {
+// 			counter = counterObj.newPadCounter10
+// 			counterObj.newPadCounter10 = counterObj.newPadCounter10 + 1
+
+// 		}
+// 		if (bufferNodeName === 'bufferNode11') {
+// 			counter = counterObj.newPadCounter11
+// 			counterObj.newPadCounter11 = counterObj.newPadCounter11 + 1
+// 		}
+// 		if (bufferNodeName === 'bufferNode12') {
+// 			counter = counterObj.newPadCounter12
+// 			counterObj.newPadCounter12 = counterObj.newPadCounter12 + 1
+
+// 		}
+// 		if (bufferNodeName === 'bufferNode13') {
+// 			counter = counterObj.newPadCounter13
+// 			counterObj.newPadCounter13 = counterObj.newPadCounter13 + 1
+// 		}
+// 		if (bufferNodeName === 'bufferNode14') {
+// 			counter = counterObj.newPadCounter14
+// 			counterObj.newPadCounter14 = counterObj.newPadCounter14 + 1
+// 		}
+// 		if (bufferNodeName === 'bufferNode15') {
+// 			counter = counterObj.newPadCounter15
+// 			counterObj.newPadCounter15 = counterObj.newPadCounter15 + 1
+
+// 		}
+// 		if (bufferNodeName === 'bufferNode16') {
+// 			counter = counterObj.newPadCounter16
+// 			counterObj.newPadCounter16 = counterObj.newPadCounter16 + 1
+// 		}
+
+
+
+// 		if (counter === 0 || noteRepeatSwitcher === "on") {
+// 			playSound1(bufferNodeName, soundFile, interval);
+// 			addBackground(pad);
+// 			setTimeout(removeBackground, 3, pad);
+
+// 		}
+// 		else {
+// 			stopSound1(bufferNodeName);
+// 			playSound1(bufferNodeName, soundFile, interval);
+// 			addBackground(pad);
+// 			setTimeout(removeBackground, 3, pad);
+
+// 		}
+// 	}
+// };
 	function playAndStop1() {
 
 		if (q === 0) {
@@ -1432,6 +1569,8 @@ function onMIDImessage(messageData) {
 			case 144:
 				console.log(note)
 				if (note.pitch == 0 || note.pitch == 24 || note.pitch == 48 || note.pitch == 72 || note.pitch == 96 || note.pitch == 120) {
+				
+					
 					playAndStop1()
 				}
 				if (note.pitch == 1 || note.pitch == 25 || note.pitch == 49 || note.pitch == 73 || note.pitch == 97) {
