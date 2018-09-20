@@ -401,6 +401,8 @@ document.addEventListener("DOMContentLoaded", function () {
 					bufferNodeBR2.buffer = buffer;
 					bufferNodeBR2.connect(gainNode);
 					gainNode.connect(context.destination);
+
+					console.log(noteRepeatSwitcher);
 					bufferNodeBR2.loop = true;
 					console.log(interval);
 					bufferNodeBR2.loopEnd = interval;
