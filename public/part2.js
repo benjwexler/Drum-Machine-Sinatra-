@@ -90,79 +90,8 @@ function removeBackground(padNumber) {
 }
 
 // let repeatPad1 = 0
-function repeatPad1EqualsZero() {
-	repeatPad1 = 0
-}
-
-// let repeatPad2 = 0
-function repeatPad2EqualsZero() {
-	repeatPad2 = 0
-}
-
-// let repeatPad3 = 0
-function repeatPad3EqualsZero() {
-	repeatPad3 = 0
-}
-
-// let repeatPad4 = 0
-function repeatPad4EqualsZero() {
-	repeatPad4 = 0
-}
-
-// let repeatPad5 = 0
-function repeatPad5EqualsZero() {
-	repeatPad5 = 0
-}
-
-// let repeatPad6 = 0
-function repeatPad6EqualsZero() {
-	repeatPad6 = 0
-}
-
-// let repeatPad7 = 0
-function repeatPad7EqualsZero() {
-	repeatPad7 = 0
-}
-
-// let repeatPad8 = 0
-function repeatPad8EqualsZero() {
-	repeatPad8 = 0
-}
-// let repeatPad9 = 0
-function repeatPad9EqualsZero() {
-	repeatPad9 = 0
-}
-
-// let repeatPad10 = 0
-function repeatPad10EqualsZero() {
-	repeatPad10 = 0
-}
-// let repeatPad11 = 0
-function repeatPad11EqualsZero() {
-	repeatPad11 = 0
-}
-
-// let repeatPad12 = 0
-function repeatPad12EqualsZero() {
-	repeatPad12 = 0
-}
-// let repeatPad13 = 0
-function repeatPad13EqualsZero() {
-	repeatPad13 = 0
-}
-
-// let repeatPad14 = 0
-function repeatPad14EqualsZero() {
-	repeatPad14 = 0
-}
-// let repeatPad15 = 0
-function repeatPad15EqualsZero() {
-	repeatPad15 = 0
-}
-
-// let repeatPad16 = 0
-function repeatPad16EqualsZero() {
-	repeatPad16 = 0
+function repeatPadEqualsZero(padNumber) {
+	window['repeatPad'+padNumber] = 0
 }
 
 for(var i=1; i<=16; i++) {
@@ -173,25 +102,9 @@ let tempo = 140;
 let noteDivision = 8;
 
 let counterObj = {	
-	newPadCounter1: 0,
-	newPadCounter2: 0,
-	newPadCounter3: 0,
-	newPadCounter4: 0,
-	newPadCounter5: 0,
-	newPadCounter6: 0,
-	newPadCounter7: 0,
-	newPadCounter8: 0,
-	newPadCounter9: 0,
-	newPadCounter10: 0,
-	newPadCounter11: 0,
-	newPadCounter12: 0,
-	newPadCounter13: 0,
-	newPadCounter14: 0,
-	newPadCounter15: 0,
-	newPadCounter16: 0,
 };
 
-// for(var i=1; i<=16; i++) {
-// 	window['newPadCounter'+i] = 0;
-// }
+for(var i=1; i<=16; i++) {
+	counterObj['newPadCounter'+i] = 0;
+}
 let counter;
