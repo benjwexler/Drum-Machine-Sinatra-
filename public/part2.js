@@ -79,13 +79,13 @@ function keyToggle() {
 
 function addBackground(padNumber) {
 	if (switcher === "off") {
-		padNumber.classList.add("backgroundBlack")
+		window[padNumber].classList.add("backgroundBlack")
 	}
 }
 
 function removeBackground(padNumber) {
 	if (switcher === "off") {
-		padNumber.classList.remove("backgroundBlack")
+		window[padNumber].classList.remove("backgroundBlack")
 	}
 }
 
@@ -168,23 +168,6 @@ function repeatPad16EqualsZero() {
 for(var i=1; i<=16; i++) {
 		window['repeatPad'+i] = 0;
 	}
-
-let q = 0;
-let w = 0;
-let e = 0;
-let r = 0;
-let t = 0;
-let y = 0;
-let u = 0;
-let j = 0;
-let o = 0;
-let p = 0;
-let a = 0;
-let s = 0;
-let m = 0;
-let f = 0;
-let g = 0;
-let h = 0;
 
 let tempo = 140;
 let noteDivision = 8;
