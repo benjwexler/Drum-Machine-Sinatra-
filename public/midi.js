@@ -23,7 +23,7 @@ var context = new window.AudioContext;
 function onMIDImessage(messageData) {
 	console.log(context);
 	var gainNode = context.createGain();
-	function beatRepeat(tempo, noteDivision) {
+	function beatRepeat() {
 		tempo2 = document.getElementById("set-tempo").value;
 		console.log(document.getElementById("set-tempo").value);
 		noteDivision2 = document.getElementById("set-noteDivision").value;
@@ -66,7 +66,7 @@ function onMIDImessage(messageData) {
     };
     
     function playAndStop1(bufferNodeName, soundFile, pad) {
-		let interval = beatRepeat(tempo, noteDivision);
+		let interval = beatRepeat();
 
 		if (switcher === "off") {
 			if (bufferNodeName === 'bufferNode1') {
