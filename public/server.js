@@ -48,9 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	for(let i=1; i<17; i++) {
 		document.getElementById(`pad${i}`).addEventListener('click', function () { playAndStop1(`bufferNode${i}`, soundObject[`pad${i}`].sound, `pad${i}`) }, true);
-		console.log(`pad${i}`);
-		console.log(`bufferNode${i}`);
-		console.log(`soundObject.pad${i}.sound`);
 	}
 
 	let setTempo = document.getElementById("set-tempo");

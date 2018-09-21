@@ -20,12 +20,9 @@ function onMIDIFailure() {
 
 }
 
-// var context = new window.AudioContext;
-// console.log(context);
+var context = new window.AudioContext;
+
 function onMIDImessage(messageData) {
-    // var gainNode = context.createGain();
-    
-	var context = new window.AudioContext;
 	console.log(context);
 	var gainNode = context.createGain();
 	function beatRepeat(tempo, noteDivision) {
@@ -67,7 +64,7 @@ function onMIDImessage(messageData) {
 	};
 
 	function stopSound1(nameBufferNode) {
-		window[nameBufferNode].stop(context.currentTime);
+		window[nameBufferNode].stop(context.currentTime + .5);
     };
     
     function playAndStop1(bufferNodeName, soundFile, pad) {
@@ -172,52 +169,52 @@ function onMIDImessage(messageData) {
 			case 144:
 				console.log(note)
 				if (note.pitch == 0 || note.pitch == 24 || note.pitch == 48 || note.pitch == 72 || note.pitch == 96 || note.pitch == 120) {
-					playAndStop1('bufferNode1', soundObject.pad1.sound, pad1)
+					playAndStop1('bufferNode1', soundObject.pad1.sound, 'pad1')
 				}
 				if (note.pitch == 1 || note.pitch == 25 || note.pitch == 49 || note.pitch == 73 || note.pitch == 97) {
-					playAndStop1('bufferNode2', soundObject.pad2.sound, pad2)
+					playAndStop1('bufferNode2', soundObject.pad2.sound, 'pad2')
 				}
 				if (note.pitch == 2 || note.pitch == 26 || note.pitch == 50 || note.pitch == 74 || note.pitch == 98) {
-					playAndStop1('bufferNode3', soundObject.pad3.sound, pad3)
+					playAndStop1('bufferNode3', soundObject.pad3.sound, 'pad3')
 				}
 				if (note.pitch == 3 || note.pitch == 27 || note.pitch == 51 || note.pitch == 75 || note.pitch == 99) {
-					playAndStop1('bufferNode4', soundObject.pad4.sound, pad4)
+					playAndStop1('bufferNode4', soundObject.pad4.sound, 'pad4')
 				}
 				if (note.pitch == 4 || note.pitch == 28 || note.pitch == 52 || note.pitch == 76 || note.pitch == 100) {
-					playAndStop1('bufferNode5', soundObject.pad5.sound, pad5)
+					playAndStop1('bufferNode5', soundObject.pad5.sound, 'pad5')
 				}
 				if (note.pitch == 5 || note.pitch == 29 || note.pitch == 53 || note.pitch == 77 || note.pitch == 101) {
-					playAndStop1('bufferNode6', soundObject.pad6.sound, pad6)
+					playAndStop1('bufferNode6', soundObject.pad6.sound, 'pad6')
 				}
 				if (note.pitch == 6 || note.pitch == 30 || note.pitch == 54 || note.pitch == 78 || note.pitch == 102) {
-					playAndStop1('bufferNode7', soundObject.pad7.sound, pad7)
+					playAndStop1('bufferNode7', soundObject.pad7.sound, 'pad7')
 				}
 				if (note.pitch == 7 || note.pitch == 31 || note.pitch == 55 || note.pitch == 79 || note.pitch == 103) {
-					playAndStop1('bufferNode8', soundObject.pad8.sound, pad8)
+					playAndStop1('bufferNode8', soundObject.pad8.sound, 'pad8')
 				}
 				if (note.pitch == 8 || note.pitch == 32 || note.pitch == 56 || note.pitch == 80 || note.pitch == 104) {
-					playAndStop1('bufferNode9', soundObject.pad9.sound, pad9)
+					playAndStop1('bufferNode9', soundObject.pad9.sound, 'pad9')
 				}
 				if (note.pitch == 9 || note.pitch == 33 || note.pitch == 57 || note.pitch == 81 || note.pitch == 105) {
-					playAndStop1('bufferNode10', soundObject.pad10.sound, pad10)
+					playAndStop1('bufferNode10', soundObject.pad10.sound, 'pad10')
 				}
 				if (note.pitch == 10 || note.pitch == 34 || note.pitch == 58 || note.pitch == 82 || note.pitch == 106) {
-					playAndStop1('bufferNode11', soundObject.pad11.sound, pad11)
+					playAndStop1('bufferNode11', soundObject.pad11.sound, 'pad11')
 				}
 				if (note.pitch == 11 || note.pitch == 35 || note.pitch == 59 || note.pitch == 83 || note.pitch == 107) {
-					playAndStop1('bufferNode12', soundObject.pad12.sound, pad12)
+					playAndStop1('bufferNode12', soundObject.pad12.sound, 'pad12')
 				}
 				if (note.pitch == 12 || note.pitch == 36 || note.pitch == 60 || note.pitch == 84 || note.pitch == 108) {
-					playAndStop1('bufferNode13', soundObject.pad13.sound, pad13)
+					playAndStop1('bufferNode13', soundObject.pad13.sound, 'pad13')
 				}
 				if (note.pitch == 13 || note.pitch == 37 || note.pitch == 61 || note.pitch == 85 || note.pitch == 109) {
-					playAndStop1('bufferNode14', soundObject.pad14.sound, pad14)
+					playAndStop1('bufferNode14', soundObject.pad14.sound, 'pad14')
 				}
 				if (note.pitch == 14 || note.pitch == 38 || note.pitch == 62 || note.pitch == 86 || note.pitch == 110) {
-					playAndStop1('bufferNode15', soundObject.pad15.sound, pad15)
+					playAndStop1('bufferNode15', soundObject.pad15.sound, 'pad15')
 				}
 				if (note.pitch == 15 || note.pitch == 39 || note.pitch == 63 || note.pitch == 87 || note.pitch == 111) {
-					playAndStop1('bufferNode16', soundObject.pad16.sound, pad16)
+					playAndStop1('bufferNode16', soundObject.pad16.sound, 'pad16')
 				}
 
 				break;
