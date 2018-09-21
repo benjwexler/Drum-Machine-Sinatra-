@@ -481,6 +481,14 @@ document.addEventListener("DOMContentLoaded", function () {
 	document.getElementById('pad15').addEventListener('click', function () { playAndStop1('bufferNode15', soundObject.pad15.sound, pad15) }, true);
 	document.getElementById('pad16').addEventListener('click', function () { playAndStop1('bufferNode16', soundObject.pad16.sound, pad16) }, true);
 
+
+	// for(let i=1; i<17; i++) {
+	// 	document.getElementById(`pad${i}`).addEventListener('click', function () { playAndStop1(`bufferNode${i}`, `soundObject.pad${i}.sound`, `pad${1}`) }, true);
+	// 	console.log(`pad${i}`);
+	// 	console.log(`bufferNode${i}`);
+	// 	console.log(`soundObject.pad${i}.sound`);
+	// }
+
 	let setTempo = document.getElementById("set-tempo");
 
 	function keyzDown(event) {
