@@ -222,7 +222,55 @@ function onMIDImessage(messageData) {
 
 				break;
 			case 128:
-				console.log("Off")
+                console.log("Off")
+                if (note.pitch == 0 || note.pitch == 24 || note.pitch == 48 || note.pitch == 72 || note.pitch == 96 || note.pitch == 120) {
+					stopSound1('bufferNode1')
+                }
+                if (note.pitch == 1 || note.pitch == 25 || note.pitch == 49 || note.pitch == 73 || note.pitch == 97) {
+					stopSound1('bufferNode2')
+				}
+				if (note.pitch == 2 || note.pitch == 26 || note.pitch == 50 || note.pitch == 74 || note.pitch == 98) {
+					stopSound1('bufferNode3')
+				}
+				if (note.pitch == 3 || note.pitch == 27 || note.pitch == 51 || note.pitch == 75 || note.pitch == 99) {
+					stopSound1('bufferNode4')
+				}
+				if (note.pitch == 4 || note.pitch == 28 || note.pitch == 52 || note.pitch == 76 || note.pitch == 100) {
+					stopSound1('bufferNode5')
+				}
+				if (note.pitch == 5 || note.pitch == 29 || note.pitch == 53 || note.pitch == 77 || note.pitch == 101) {
+					stopSound1('bufferNode6')
+				}
+				if (note.pitch == 6 || note.pitch == 30 || note.pitch == 54 || note.pitch == 78 || note.pitch == 102) {
+					stopSound1('bufferNode7')
+				}
+				if (note.pitch == 7 || note.pitch == 31 || note.pitch == 55 || note.pitch == 79 || note.pitch == 103) {
+					stopSound1('bufferNode8')
+				}
+				if (note.pitch == 8 || note.pitch == 32 || note.pitch == 56 || note.pitch == 80 || note.pitch == 104) {
+					stopSound1('bufferNode9')
+				}
+				if (note.pitch == 9 || note.pitch == 33 || note.pitch == 57 || note.pitch == 81 || note.pitch == 105) {
+					stopSound1('bufferNode10')
+				}
+				if (note.pitch == 10 || note.pitch == 34 || note.pitch == 58 || note.pitch == 82 || note.pitch == 106) {
+					stopSound1('bufferNode11')
+				}
+				if (note.pitch == 11 || note.pitch == 35 || note.pitch == 59 || note.pitch == 83 || note.pitch == 107) {
+					stopSound1('bufferNode12')
+				}
+				if (note.pitch == 12 || note.pitch == 36 || note.pitch == 60 || note.pitch == 84 || note.pitch == 108) {
+					stopSound1('bufferNode13')
+				}
+				if (note.pitch == 13 || note.pitch == 37 || note.pitch == 61 || note.pitch == 85 || note.pitch == 109) {
+					stopSound1('bufferNode14')
+				}
+				if (note.pitch == 14 || note.pitch == 38 || note.pitch == 62 || note.pitch == 86 || note.pitch == 110) {
+					stopSound1('bufferNode15')
+				}
+				if (note.pitch == 15 || note.pitch == 39 || note.pitch == 63 || note.pitch == 87 || note.pitch == 111) {
+					stopSound1('bufferNode16')
+				}
 				break;
 		}
 	}
