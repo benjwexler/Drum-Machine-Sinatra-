@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-	// let tempo = 140;
-	// let noteDivision = 8;
+
 	var context = new window.AudioContext;
 	console.log(context);
 	var gainNode = context.createGain();

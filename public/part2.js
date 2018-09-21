@@ -89,7 +89,6 @@ function removeBackground(padNumber) {
 	}
 }
 
-// let repeatPad1 = 0
 function repeatPadEqualsZero(padNumber) {
 	window['repeatPad'+padNumber] = 0
 }

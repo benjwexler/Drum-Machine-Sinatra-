@@ -1,4 +1,3 @@
-
 var midi, data;
 if (navigator.requestMIDIAccess) {
 	navigator.requestMIDIAccess({
@@ -17,7 +16,6 @@ function onMIDISuccess(midiData) {
 }
 function onMIDIFailure() {
 	console.warn("Not finding a MIDI controller");
-
 }
 
 var context = new window.AudioContext;
