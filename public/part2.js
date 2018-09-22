@@ -46,6 +46,72 @@ function beatRepeatToggle() {
 		beatRepeatBtn.style.backgroundColor = "white";
 		beatRepeatBtn.innerText = "Beat Repeat Off";
 		noteRepeatSwitcher = "off";
+
+		if (counterObj.newPadCounter1>0) {
+			bufferNode1.stop(context.currentTime);
+			counterObj.newPadCounter1 = 0;	
+		}
+		if (counterObj.newPadCounter2>0) {
+			bufferNode2.stop(context.currentTime);
+			counterObj.newPadCounter2 = 0;	
+		}
+		if (counterObj.newPadCounter3>0) {
+			bufferNode3.stop(context.currentTime);
+			counterObj.newPadCounter3 = 0;	
+		}
+		if (counterObj.newPadCounter4>0) {
+			bufferNode4.stop(context.currentTime);
+			counterObj.newPadCounter4 = 0;	
+		}
+		if (counterObj.newPadCounter5>0) {
+			bufferNode5.stop(context.currentTime);
+			counterObj.newPadCounter5 = 0;	
+		}
+		if (counterObj.newPadCounter6>0) {
+			bufferNode6.stop(context.currentTime);
+			counterObj.newPadCounter6 = 0;	
+		}
+		if (counterObj.newPadCounter7>0) {
+			bufferNode7.stop(context.currentTime);
+			counterObj.newPadCounter7 = 0;	
+		}
+		if (counterObj.newPadCounter8>0) {
+			bufferNode8.stop(context.currentTime);
+			counterObj.newPadCounter8 = 0;	
+		}
+		if (counterObj.newPadCounter9>0) {
+			bufferNode9.stop(context.currentTime);
+			counterObj.newPadCounter9 = 0;	
+		}
+		if (counterObj.newPadCounter10>0) {
+			bufferNode10.stop(context.currentTime);
+			counterObj.newPadCounter10 = 0;	
+		}
+		if (counterObj.newPadCounter11>0) {
+			bufferNode11.stop(context.currentTime);
+			counterObj.newPadCounter11 = 0;	
+		}
+		if (counterObj.newPadCounter12>0) {
+			bufferNode12.stop(context.currentTime);
+			counterObj.newPadCounter12 = 0;	
+		}
+		if (counterObj.newPadCounter13>0) {
+			bufferNode13.stop(context.currentTime);
+			counterObj.newPadCounter13 = 0;	
+		}
+		if (counterObj.newPadCounter14>0) {
+			bufferNode14.stop(context.currentTime);
+			counterObj.newPadCounter14 = 0;	
+		}
+		if (counterObj.newPadCounter15>0) {
+			bufferNode15.stop(context.currentTime);
+			counterObj.newPadCounter15 = 0;	
+		}
+		if (counterObj.newPadCounter16>0) {
+			bufferNode16.stop(context.currentTime);
+			counterObj.newPadCounter16 = 0;	
+		}
+		
 	} else {
 		beatRepeatBtn.style.backgroundColor = "yellow";
 		beatRepeatBtn.innerText = "Beat Repeat On";
@@ -89,109 +155,18 @@ function removeBackground(padNumber) {
 	}
 }
 
-// let repeatPad1 = 0
-function repeatPad1EqualsZero() {
-	repeatPad1 = 0
-}
-
-// let repeatPad2 = 0
-function repeatPad2EqualsZero() {
-	repeatPad2 = 0
-}
-
-// let repeatPad3 = 0
-function repeatPad3EqualsZero() {
-	repeatPad3 = 0
-}
-
-// let repeatPad4 = 0
-function repeatPad4EqualsZero() {
-	repeatPad4 = 0
-}
-
-// let repeatPad5 = 0
-function repeatPad5EqualsZero() {
-	repeatPad5 = 0
-}
-
-// let repeatPad6 = 0
-function repeatPad6EqualsZero() {
-	repeatPad6 = 0
-}
-
-// let repeatPad7 = 0
-function repeatPad7EqualsZero() {
-	repeatPad7 = 0
-}
-
-// let repeatPad8 = 0
-function repeatPad8EqualsZero() {
-	repeatPad8 = 0
-}
-// let repeatPad9 = 0
-function repeatPad9EqualsZero() {
-	repeatPad9 = 0
-}
-
-// let repeatPad10 = 0
-function repeatPad10EqualsZero() {
-	repeatPad10 = 0
-}
-// let repeatPad11 = 0
-function repeatPad11EqualsZero() {
-	repeatPad11 = 0
-}
-
-// let repeatPad12 = 0
-function repeatPad12EqualsZero() {
-	repeatPad12 = 0
-}
-// let repeatPad13 = 0
-function repeatPad13EqualsZero() {
-	repeatPad13 = 0
-}
-
-// let repeatPad14 = 0
-function repeatPad14EqualsZero() {
-	repeatPad14 = 0
-}
-// let repeatPad15 = 0
-function repeatPad15EqualsZero() {
-	repeatPad15 = 0
-}
-
-// let repeatPad16 = 0
-function repeatPad16EqualsZero() {
-	repeatPad16 = 0
+function repeatPadEqualsZero(padNumber) {
+	window['repeatPad'+padNumber] = 0
 }
 
 for(var i=1; i<=16; i++) {
 		window['repeatPad'+i] = 0;
 	}
 
-let tempo = 140;
-let noteDivision = 8;
-
 let counterObj = {	
-	newPadCounter1: 0,
-	newPadCounter2: 0,
-	newPadCounter3: 0,
-	newPadCounter4: 0,
-	newPadCounter5: 0,
-	newPadCounter6: 0,
-	newPadCounter7: 0,
-	newPadCounter8: 0,
-	newPadCounter9: 0,
-	newPadCounter10: 0,
-	newPadCounter11: 0,
-	newPadCounter12: 0,
-	newPadCounter13: 0,
-	newPadCounter14: 0,
-	newPadCounter15: 0,
-	newPadCounter16: 0,
 };
 
-// for(var i=1; i<=16; i++) {
-// 	window['newPadCounter'+i] = 0;
-// }
+for(var i=1; i<=16; i++) {
+	counterObj['newPadCounter'+i] = 0;
+}
 let counter;
