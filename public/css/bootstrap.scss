@@ -40,16 +40,14 @@ background: linear-gradient(to bottom right, black 77%, #00d7d7 78%)
     font-family: 'Monoton', cursive;
 }
 
-#keyToggle {
+#keyAssign {
     height: 50%;
     width: 20%;
     margin: auto;
     // border: 5px solid rgb(62, 177, 192);
     // border: 5px solid rgb(34, 43, 164);
     // border: 5px solid black;
-    
     color: white;
-    
     // color: black;
     // color: yellow;
     // background: yellow;
@@ -59,7 +57,47 @@ background: linear-gradient(to bottom right, black 77%, #00d7d7 78%)
     // border-bottom: 1px;
     // border-right: 2px solid black;
     // margin-top: 20px;
-    
+}
+
+#beatRepeat {
+    height: 50%;
+    width: 20%;
+    margin: auto;
+    color: white;
+    font-size: 13px;
+    border: 2px solid black;
+}
+#keyToggle3 {
+    height: 50%;
+    width: 20%;
+    margin: auto;
+    color: white;
+    font-size: 13px;
+    border: 2px solid black;
+}
+#keyToggle4 {
+    height: 50%;
+    width: 20%;
+    margin: auto;
+    color: white;
+    font-size: 13px;
+    border: 2px solid black;
+}
+#keyToggle5 {
+    height: 50%;
+    width: 20%;
+    margin: auto;
+    color: white;
+    font-size: 13px;
+    border: 2px solid black;
+}
+#keyToggle6 {
+    height: 50%;
+    width: 20%;
+    margin: auto;
+    color: white;
+    font-size: 13px;
+    border: 2px solid black;
 }
 
 #mainLeft {
@@ -201,7 +239,11 @@ background: linear-gradient(to bottom right, black 77%, #00d7d7 78%)
     
 }
 
-#tempoForm {
+.backgroundBlack { 
+    background: white;
+}
+
+#set-tempo {
     height: 100%;
     width: 100%;
     text-align: center;
@@ -261,7 +303,7 @@ background: linear-gradient(to bottom right, black 77%, #00d7d7 78%)
     justify-content: center;
 }
 
-#previousKitContainer {
+#previousKit {
     height: 100%;
     width: 50%;
     border: 2px solid black;
@@ -269,7 +311,7 @@ background: linear-gradient(to bottom right, black 77%, #00d7d7 78%)
     flex-direction: column;
     text-align: center;
 }
-#nextKitContainer {
+#changeKit {
     height: 100%;
     width: 50%;
     border: 2px solid black;
@@ -317,7 +359,7 @@ iframe {
 
 }
 
-.pad {
+.pads {
     height: 80%;
     width: 75%;
     
@@ -533,7 +575,7 @@ a:active {
     width: 35px;
     position: absolute;
     bottom: 0px;
-    // display: none;
+    display: none;
     right: 2%;
     border-radius: 5%;
 }

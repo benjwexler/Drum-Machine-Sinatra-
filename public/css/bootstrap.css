@@ -29,7 +29,52 @@ body {
   font-family: 'Monoton', cursive;
 }
 
-#keyToggle {
+#keyAssign {
+  height: 50%;
+  width: 20%;
+  margin: auto;
+  color: white;
+  font-size: 13px;
+  border: 2px solid black;
+}
+
+#beatRepeat {
+  height: 50%;
+  width: 20%;
+  margin: auto;
+  color: white;
+  font-size: 13px;
+  border: 2px solid black;
+}
+
+#keyToggle3 {
+  height: 50%;
+  width: 20%;
+  margin: auto;
+  color: white;
+  font-size: 13px;
+  border: 2px solid black;
+}
+
+#keyToggle4 {
+  height: 50%;
+  width: 20%;
+  margin: auto;
+  color: white;
+  font-size: 13px;
+  border: 2px solid black;
+}
+
+#keyToggle5 {
+  height: 50%;
+  width: 20%;
+  margin: auto;
+  color: white;
+  font-size: 13px;
+  border: 2px solid black;
+}
+
+#keyToggle6 {
   height: 50%;
   width: 20%;
   margin: auto;
@@ -150,7 +195,11 @@ body {
   margin: auto;
 }
 
-#tempoForm {
+.backgroundBlack {
+  background: white;
+}
+
+#set-tempo {
   height: 100%;
   width: 100%;
   text-align: center;
@@ -206,7 +255,7 @@ body {
           justify-content: center;
 }
 
-#previousKitContainer {
+#previousKit {
   height: 100%;
   width: 50%;
   border: 2px solid black;
@@ -220,7 +269,7 @@ body {
   text-align: center;
 }
 
-#nextKitContainer {
+#changeKit {
   height: 100%;
   width: 50%;
   border: 2px solid black;
@@ -263,7 +312,7 @@ iframe {
   width: 25%;
 }
 
-.pad {
+.pads {
   height: 80%;
   width: 75%;
   margin: auto;
@@ -515,6 +564,7 @@ a:active {
   width: 35px;
   position: absolute;
   bottom: 0px;
+  display: none;
   right: 2%;
   border-radius: 5%;
 }

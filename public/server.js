@@ -6,8 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	function beatRepeat() {
 		tempo2 = document.getElementById("set-tempo").value;
 		console.log(document.getElementById("set-tempo").value);
-		noteDivision2 = document.getElementById("set-noteDivision").value;
-		console.log(document.getElementById("set-noteDivision").value);
+		// noteDivision2 = document.getElementById("set-noteDivision").value;
+		noteDivision2 = 8;
+		// console.log(document.getElementById("set-noteDivision").value);
 		let interval = 1 / ((tempo2 / 60) * noteDivision2 / 4)
 		return interval
 	}

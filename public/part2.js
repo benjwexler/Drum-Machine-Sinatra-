@@ -7,6 +7,8 @@ let noteRepeatSwitcher = "off";
 let hiddenButton = document.getElementsByClassName("hiddenButton");
 var pads = document.getElementsByClassName("pads");
 
+keyAssign.addEventListener("click", keyToggle);
+
 let tempoForm = document.getElementById("set-tempo");
 
 tempoForm.onkeypress = function(e) {
@@ -52,9 +54,11 @@ function keyBind() {
 };
 
 function beatRepeatToggle() {
+	console.log("Beat Repeat button Works");
 	if (noteRepeatSwitcher === "on") {
-		beatRepeatBtn.style.backgroundColor = "white";
+		beatRepeatBtn.style.backgroundColor = "black";
 		beatRepeatBtn.innerText = "Beat Repeat Off";
+		beatRepeatBtn.style.color = "white";
 		noteRepeatSwitcher = "off";
 
 		if (counterObj.newPadCounter1>0) {
@@ -125,14 +129,18 @@ function beatRepeatToggle() {
 	} else {
 		beatRepeatBtn.style.backgroundColor = "yellow";
 		beatRepeatBtn.innerText = "Beat Repeat On";
+		beatRepeatBtn.style.color = "black";
 		noteRepeatSwitcher = "on";
 	}
 }
 
+beatRepeatBtn.addEventListener("click", beatRepeatToggle);
+
 function keyToggle() {
 	if (switcher === "on") {
-		keyAssign.style.backgroundColor = "white";
+		keyAssign.style.backgroundColor = "black";
 		keyAssign.innerText = "Key Assign Off";
+		keyAssign.style.color = "white";
 
 		for (let x = 0; x < hiddenButton.length; x++) {
 
@@ -142,6 +150,7 @@ function keyToggle() {
 	} else {
 		keyAssign.style.backgroundColor = "yellow";
 		keyAssign.innerText = "Key Assign On";
+		keyAssign.style.color = "black";
 		for (let x = 0; x < hiddenButton.length; x++) {
 			hiddenButton[x].style.display = "inline"
 		}
@@ -164,6 +173,53 @@ function removeBackground(padNumber) {
 		window[padNumber].classList.remove("backgroundBlack")
 	}
 }
+
+function removeBackgroundPreviousKit() {
+
+	previousKit.classList.remove("backgroundBlack")
+	
+}
+
+function addBackgroundPreviousKit() {
+	
+		previousKit.classList.add("backgroundBlack");
+
+		setTimeout(removeBackgroundPreviousKit, 3);
+	
+}
+
+function removeBackgroundNextKit() {
+
+	changeKit.classList.remove("backgroundBlack")
+	
+}
+
+function addBackgroundNextKit() {
+	
+		changeKit.classList.add("backgroundBlack");
+
+		setTimeout(removeBackgroundNextKit, 3);
+	
+}
+
+previousKit.addEventListener("click", addBackgroundPreviousKit);
+changeKit.addEventListener("click", addBackgroundNextKit);
+
+
+
+// function addBackgroundChangeKit(padNumber) {
+// 	if (switcher === "off") {
+// 		window[padNumber].classList.add("backgroundBlack")
+// 	}
+// }
+
+// function removeBackground(padNumber) {
+// 	if (switcher === "off") {
+// 		window[padNumber].classList.remove("backgroundBlack")
+// 	}
+// }
+
+
 
 function repeatPadEqualsZero(padNumber) {
 	window['repeatPad'+padNumber] = 0
