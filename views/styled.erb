@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Poor+Story" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+        <title>Bootsrap Drum Machine</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">B*T*Z  -     drum</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul id="menuItems" class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+              
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Questions</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li> -->
+            </ul>
+        </div>
+    </nav>
+
+    <div id="mainContainer" class="container">
+
+
+
+        <div class="row">
+            <div id="topSectionLeft" class="col-sm-6 col-md-7 col-lg-6 d-none d-sm-block">
+                <div class="topLeftDivider">
+                    <div id="keyToggle">
+                        Key Map 
+                        <br>Off
+                    </div>
+                    <div id="keyToggle">
+                            Note 
+                            <br>Repeat
+                            <br>Off
+                        </div>
+                        <div id="keyToggle">
+                                1/4 
+                                <br>Note
+                            </div>
+                            <div id="keyToggle">
+                                    1/8 
+                                <br>Note
+                                </div>
+                                <div id="keyToggle">
+                                        1/16 
+                                <br>Note
+                                    </div>
+                                    <div id="keyToggle">
+                                            1/32 
+                                <br>Note
+                                        </div>
+                </div>
+                <!-- <div class="topLeftDivider"></div> -->
+            </div>
+            <div id="topSectionMiddle" class="col-sm-6 col-md-5 col-lg-4 d-none d-sm-block">
+
+                Metro Boomin
+            </div>
+            <div id="topSectionRight" class="col-lg-2 d-none d-lg-block"> 
+                <div id="tempoTop">
+                    Tempo
+                </div>
+                <div id="setTempo">
+                   
+                            <input id="tempoForm" type="number" value="80">
+                    
+                </div>
+            </div>
+           
+            <div id="mainLeft" class="col-sm-6 col-md-7 col-lg-6">
+                <div class="padRow">
+                    <div class="padCol">
+                        <div class="pad padsRow1">
+                            <div class="hiddenButtonContainer">
+                                <button class="hiddenButton"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padCol">
+                        <div class="pad padsRow1">
+                                <div class="hiddenButtonContainer">
+                                        <button class="hiddenButton"></button>
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="padCol">
+                        <div class="pad padsRow1">
+                                <div class="hiddenButtonContainer">
+                                        <button class="hiddenButton"></button>
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="padCol">
+                        <div class="pad padsRow1">
+                                <div class="hiddenButtonContainer">
+                                        <button class="hiddenButton"></button>
+                                    </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="padRow">
+                    <div class="padCol">
+                        <div class="pad padsRow2">
+                                <div class="hiddenButtonContainer">
+                                <button class="hiddenButton"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padCol">
+                        <div class="pad padsRow2">
+                                <div class="hiddenButtonContainer">
+                                <button class="hiddenButton"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padCol">
+                        <div class="pad padsRow2">
+                                <div class="hiddenButtonContainer">
+                                <button class="hiddenButton"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padCol">
+                        <div class="pad padsRow2">
+                                <div class="hiddenButtonContainer">
+                                <button class="hiddenButton"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="padRow">
+                    <div class="padCol">
+                        <div class="pad padsRow3">
+                                <div class="hiddenButtonContainer">
+                                <button class="hiddenButton"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padCol">
+                        <div class="pad padsRow3">
+                                <div class="hiddenButtonContainer">
+                                <button class="hiddenButton"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padCol">
+                        <div class="pad padsRow3">
+                                <div class="hiddenButtonContainer">
+                                <button class="hiddenButton"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padCol">
+                        <div class="pad padsRow3">
+                                <div class="hiddenButtonContainer">
+                                <button class="hiddenButton"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="padRow">
+                    <div class="padCol">
+                        <div class="pad padsRow4">
+                                <div class="hiddenButtonContainer">
+                                <button class="hiddenButton"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padCol">
+                        <div class="pad padsRow4">
+                                <div class="hiddenButtonContainer">
+                                <button class="hiddenButton"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padCol">
+                        <div class="pad padsRow4">
+                                <div class="hiddenButtonContainer">
+                                <button class="hiddenButton"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padCol">
+                        <div class="pad padsRow4">
+                                <div class="hiddenButtonContainer">
+                                <button class="hiddenButton"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mainMiddle" class="col-sm-5 col-md-5 col-lg-4 ">
+                <div id="videoContainer">
+                    <iframe id="youtubeVid" src="https://www.youtube.com/embed/4xiAW532xS0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                    </iframe>
+                </div>
+                <div id="mainMiddleBottom">
+                    <div id="changeKitContainer">
+                        <div id="previousKitContainer">
+                                <div id="previousKitText">
+                                        Previous Kit
+                                    </div>
+                                <div class="changeKitSymbol">
+                                    ‹
+                                </div>
+                                
+                        </div>
+                        <div id="nextKitContainer">
+                                <div id="previousKitText">
+                                        Next Kit
+                                    </div>
+                                <div class="changeKitSymbol">
+                                        ›
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mainRight" class="col-lg-2 d-none d-lg-block">
+                    <div id="knob1Container">
+                            <!-- <div class="knobs"></div> -->
+                            <i id="soundcloudIcon" class="fab fa-soundcloud fa-5x icons"></i>
+                        </div>
+                        <div id="knob2Container">
+                            <!-- <div class="knobs"></div> -->
+                            <!-- <i id="facebookIcon" class="fab fa-facebook fa-5x icons"></i> -->
+                        </div>
+                        <div id="knob3Container">
+                            <!-- <div class="knobs"></div> -->
+                            <!-- <i class="fab fa-instagram fa-5x icons"></i> -->
+                        </div>
+                        <div id="knob4Container">
+                            <!-- <div class="knobs"></div> -->
+                        </div>
+                        <div id="knob5Container">
+                            <div id="bigKnob"></div>
+                        </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="footer" class="">
+        Developed.by.
+        <br>
+        <a href="https://www.w3schools.com">Wex</a>
+    </div>
+
+    
+
+    <!-- Optional JavaScript -->
+    <script src="drumKits.js"></script>
+    <script src="part2.js"></script>
+    <script src="server.js"></script>
+    <script src="midi.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

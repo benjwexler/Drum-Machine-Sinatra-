@@ -6,6 +6,16 @@ let switcher = "off";
 let noteRepeatSwitcher = "off";
 let hiddenButton = document.getElementsByClassName("hiddenButton");
 var pads = document.getElementsByClassName("pads");
+
+let tempoForm = document.getElementById("set-tempo");
+
+tempoForm.onkeypress = function(e) {
+	var key = e.charCode || e.keyCode || 0;     
+	if (key == 13) {
+	  e.preventDefault();
+	}
+  }
+
 function displayKeyMappings() {
 	hiddenButton[0].innerText = String.fromCharCode(soundObject.pad1.key)
 	hiddenButton[1].innerText = String.fromCharCode(soundObject.pad2.key)
